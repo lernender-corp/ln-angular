@@ -10,8 +10,8 @@ jobs:
       node_js: lts/*
       # Advanced: optionally overwrite your default `script` step to skip the tests
       # script: skip
-      before_deploy:
-        - cd dist/lib
+      #before_deploy:
+      #  - cd dist/lib
       deploy:
         provider: npm
         email: "$NPM_EMAIL"
