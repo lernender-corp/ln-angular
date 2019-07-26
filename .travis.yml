@@ -10,9 +10,12 @@ jobs:
       node_js: lts/*
       # Advanced: optionally overwrite your default `script` step to skip the tests
       # script: skip
+      before_deploy:
+        - cd dist/lib
       deploy:
-        provider: script
-        script: "cp .npmrc.template $HOME/.npmrc && npm publish"
+        provider: npm
+        email: "$NPM_EMAIL"
+        api_key: "$NPM_API_KEY"
         skip_cleanup: true
         script:
           - npx semantic-release
