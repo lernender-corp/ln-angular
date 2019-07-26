@@ -1,0 +1,3 @@
+always-auth=true
+registry=https://packagecloud.io/lernender/@lernender/angular/npm/
+//packagecloud.io/lernender/@lernender/angular/npm/:_authToken=${API_TOKEN}

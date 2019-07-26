@@ -12,6 +12,15 @@ jobs:
       # script: skip
       deploy:
         provider: script
+        script: "cp .npmrc.template $HOME/.npmrc && npm publish"
         skip_cleanup: true
         script:
           - npx semantic-release
+        on:
+          tags: true
+      notifications:
+        email:
+          recipients:
+          - shawnlovelidge@gmail.com
+          on_success: change
+          on_failure: always
