@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "@lernender/angular": "^1.0.37",
     "@lernender/core": "^1.0.66",
     "@tweenjs/tween.js": "^17.4.0",
     "lodash-es": "^4.17.15",
