@@ -1,0 +1,75 @@
+@import "../common/index";
+@import "../normalize";
+
+//
+// Standard CSS Rules
+//
+body,
+html {
+  background-color: $white;
+  color: $grey-908;
+  font-family: 'Roboto-Regular', 'Segoe UI';
+  font-size: 14px;
+  font-weight: $font-weight-medium-light;
+  height: 100%;
+  margin: 0;
+  min-height: 100%;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+p {
+  color: $grey-908;
+  margin: 0;
+}
+
+.bold {
+  font-family: 'Roboto-Bold', 'Segoe UI';
+  font-weight:500;
+}
+
+.bolder {
+  font-weight: 700;
+}
+
+.thin {
+  font-family: 'Roboto-Thin', 'Segoe UI';
+  font-weight:100;
+}
+
+a {
+  color: $grey-908;
+  cursor: default;
+  text-transform: uppercase;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+ol,
+ul {
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-end: 0;
+  -webkit-margin-start: 0;
+  -webkit-padding-start: 0;
+  list-style-type: none;
+  margin-top: 0;
+}
+
+form label {
+  font-weight: normal;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+input[type='checkbox'] {
+  display: none;
+}

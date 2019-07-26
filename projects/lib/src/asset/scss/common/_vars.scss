@@ -1,0 +1,87 @@
+//
+// Grid Variables
+//
+$grid-gutter-width: 20px !default;
+//
+// Padding
+//
+$padding: 5px !default;
+//
+// Margin
+//
+$margin: 0 !default;
+//
+// Box Shadow's
+//
+$box-shadow-sm:   0 .125rem .25rem rgba($grey-910, .075) !default;
+$box-shadow:      0 .5rem 1rem rgba($grey-910, .15) !default;
+$box-shadow-lg:   0 1rem 3rem rgba($grey-910, .175) !default;
+//
+// Standard Fonts
+//
+$font-name: 'Roboto-Regular' !default;
+$font-path: '/asset/fonts' !default;
+$font-type: 'Regular' !default;
+$font-version: '' !default;
+
+// Standard Fonts
+//
+$font-name: 'Roboto-Thin';
+$font-path: '/asset/fonts';
+$font-type: 'Thin';
+$font-version: '';
+
+// Standard Fonts
+//
+$font-name: 'Roboto-Bold';
+$font-path: '/asset/fonts';
+$font-type: 'Bold';
+$font-version: '';
+//
+// Font Family
+//
+$font-family: 'Roboto-Regular', 'Segoe UI';
+$font-size: 14px !default;
+$font-size-secondary: 14px !default;
+$font-xsmall: 10px;
+$font-small: 12px;
+$font-large: 16px;
+//
+// Font Weights
+//
+$font-weight-medium-light: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-medium-dark: 600 !default;
+$font-weight-bold-light: 700 !default;
+$font-weight-bold: 800 !default;
+$font-weight-bold-dark: 900 !default;
+//
+// Icon
+//
+$icon-name: 'materialIcons' !default;
+$icon-path: '/asset/icons' !default;
+$icon-type: 'Regular' !default;
+$icon-version: '' !default;
+$icon-font-family: $icon-name !default;
+$icon-font-weight: 400 !default;
+$icon-font-size: 14px !default;
+//
+// Images
+//
+$image-path: '/asset/images' !default;
+
+// Typography
+// ------------------------------
+$lernender-font-family: 'Roboto','Segoe UI' !default;
+
+//
+// Z-index
+//
+$zindex-dropdown:                   1000 !default;
+$zindex-sticky:                     1020 !default;
+$zindex-fixed:                      1030 !default;
+$zindex-modal-backdrop:             1040 !default;
+$zindex-modal:                      1050 !default;
+$zindex-popover:                    1060 !default;
+$zindex-tooltip:                    1070 !default;
+$zindex-spinner:                    1080 !default;

@@ -1,0 +1,229 @@
+/**
+	font-size()
+ */
+ @function boolean($value: false) {
+  @if $value == false or
+      $value == "" or
+      $value == "false" or
+      $value == 'false' or
+      $value == 0 {
+          @return false;
+      }
+  @return true;
+}
+/**
+    Calculate Rem from Pixels
+ */
+ @function calcRem($size: $font-size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+/**
+	font-size()
+ */
+@mixin font-size($size: $font-size) {
+  font-size: $size;
+}
+
+/**
+	radius()
+ */
+@mixin radius($radius: 2px) {
+  border-radius: $radius;
+}
+
+/**
+	font-family()
+ */
+@mixin font-family($size: $font-size, $line-height: $font-size) {
+  font-family: $font-family;
+  @include font-size($size);
+}
+
+/**
+	icon-family()
+ */
+@mixin icon-family($size: $font-size, $line-height: $font-size) {
+  font-family: $icon-font-family;
+  @include font-size($size);
+  line-height: 1;
+}
+
+/**
+	disabled()
+ */
+@mixin disabled($opacity: 1.0, $color: rgba(27,37,50,0.4), $background-color: transparent) {
+  background-color: $background-color;
+  color: $color;
+  cursor: default;
+  opacity: $opacity;
+  pointer-events: none;
+  &:hover {
+    color:$color;
+  }
+}
+
+/**
+  input-hover()
+  */
+  @mixin input-hover() {
+    box-shadow: 0 0 8px 0 rgba(0,122,236,60), 0 0 1px 0 rgba(0,122,236,1);
+    cursor: default;
+    -webkit-box-shadow: 0 0 8px 0 rgba(0,122,236,60), 0 0 1px 0 rgba(0,122,236,1);
+    border-radius: 4px;
+  }
+
+  /**
+  input-hover()
+  */
+  @mixin input-focus() {
+    box-shadow: 0 0 8px 0 rgba(0,122,236,60), 0 0 1px 0 rgba(0,122,236,1);
+    cursor: default;
+    -webkit-box-shadow: 0 0 8px 0 rgba(0,122,236,60), 0 0 1px 0 rgba(0,122,236,1);
+    border-radius: 4px;
+    outline:none;
+  }
+
+
+/**
+	user-select
+ */
+@mixin user-select($option: none) {
+  -moz-user-select: $option;
+  -khtml-user-select: $option;
+  -webkit-user-select: $option;
+  -ms-user-select: $option;
+  user-select: $option;
+}
+
+/**
+	ellipsis
+ */
+@mixin ellipsis($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/**
+	scroll-bar
+ */
+ @mixin scroll-bar($state: none) {
+  -ms-overflow-style: $state;  // IE 10+
+  scrollbar-width: $state;  // Firefox
+
+  ::-webkit-scrollbar {
+    display: $state;  // Safari and Chrome
+  }
+}
+
+/**
+	default-box
+ */
+@mixin default-box($padding: 0, $margin: 0, $height: 100%, $width: 100%) {
+  height: $height;
+  width: $width;
+  margin: $margin;
+  padding: $padding;
+}
+
+/*
+  opacity:
+  .faded-text {
+    @include opacity(0.8);
+  }
+ */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin box-shadow(
+  $offset-x: 0px,
+  $offset-y: 1px,
+  $blur-radius: 10px,
+  $color: rgba(0,0,0,.075),
+  $inset: inset) {
+  -webkit-box-shadow: $offset-x $offset-y $blur-radius $color #{$inset};
+  -moz-box-shadow: $offset-x $offset-y $blur-radius $color #{$inset};
+  box-shadow: $offset-x $offset-y $blur-radius $color #{$inset};
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+}
+
+@mixin label($backgroundColor: transparent, $color: $gray-900, $font-size: 12px, $line-height: 16px) {
+  @include font-family();
+  @include font-size($font-size);
+  @include user-select();
+  background-color: $backgroundColor;
+  color: $color;
+  height: $line-height;
+  line-height: $line-height;
+  padding: 0;
+  margin: 10px 0;
+  text-align: left;
+  width: 100%;
+  display: block;
+}
+
+@mixin highlight($backgroundColor: $purple-light) {
+  background-color: $backgroundColor;
+}
+
+@mixin highlightable() {
+  padding: 2px;
+}
+
+@mixin input-box($padding: 0 28px 0 5px, $backgroundColor: $white, $input-height: 40px) {
+  @include box-shadow();
+  @include radius(3px);
+  background-color: $backgroundColor;
+  background-image: none;
+  border: 1px solid $grey-908;
+  color: $grey-908;
+  cursor: auto;
+  display: block;
+  height: $input-height;
+  letter-spacing: normal;
+  margin: 0;
+  overflow: visible;
+  padding: $padding;
+  text-align: start;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  user-select: text;
+  width: 100%;
+  word-spacing: normal;
+}
+
+@mixin input($height: 40px, $margin: 1px 0) {
+  @include font-family();
+  @include font-size();
+  border: 0;
+  margin: $margin;
+  height: $height;
+}
+
+
+@mixin transform-scale($scale: 1.0) {
+  -ms-transform: scale($scale); /* IE 9 */
+  -webkit-transform: scale($scale); /* Safari 3-8 */
+  transform: scale($scale);
+}
+
+@mixin transform-translate($tran1:-50%, $tran2: -50%) {
+  transform: translate($tran1, $tran2);
+  -ms-transform: translate($tran1, $tran2);
+  -webkit-transform: translate($tran1, $tran2);
+}
+
+@mixin border($size: 1px, $style: solid, $color: $black) {
+  @include border-width($size $size $size $size);
+  @include border-style($style $style $style $style);
+  @include border-style($style $style $style $style);
+  @include border-color($style $style $style $style);
+}

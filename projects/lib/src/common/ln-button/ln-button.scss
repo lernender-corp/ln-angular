@@ -1,0 +1,215 @@
+@import '../../asset/scss/index';
+
+$circle-size: 40px;
+$circle-size-sm: 25px;
+$button-height: 32px;
+$button-height-small: 24px;
+
+.ln-button {
+  margin: 0;
+  padding: 0;
+
+  button {
+    @include font-size(12px);
+    @include user-select();
+    @include radius(16px);
+    height: $button-height;
+    width: auto;
+    line-height: 12px;
+    padding: 8px 19px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    outline: none;
+    border: 0;
+    display: flex;
+    flex-direction: row;
+
+    &:not(:first-child) {
+      padding-left: 6px;
+    }
+
+    &.btn-small {
+      height: 24px;
+      padding: 4px 20px;
+    }
+
+    &.btn-icon {
+      @include radius(50%);
+      height: $circle-size;
+      width: $circle-size;
+      padding: 0 10px;
+      font-size: 20px;
+
+      &.btn-secondary {
+        height: $circle-size + 1;
+        width: $circle-size + 1;
+      }
+
+      & i {
+        vertical-align: middle;
+      }
+
+      &:not(.btn-primary) {
+        &:hover, &:active, &.btn-secondary--hover, &.btn-secondary--active {
+          margin: 0 1px 1px 1px;
+          height: $circle-size;
+          width: $circle-size;
+        }
+      }
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &.ln-ghost--icon {
+      line-height: 15px;
+
+      ln-icon {
+        font-size: 20px;
+        padding-right: 6px;
+        line-height: 12px;
+      }
+    }
+
+    &:not(.disabled):not([disabled]) {
+      &.btn-primary {
+        background-color: $brand-color;
+        color: $white;
+
+        &:hover,
+        &.btn-primary--hover {
+          background-color: rgba(190, 4, 4, 1);
+          box-shadow: 0 2px 4px 0 rgba(204,0,0,0.12), 0 4px 8px 0 rgba(124,132,138,0.2);
+        }
+
+        &:active,
+        &.btn-primary--active {
+          background-color: rgba(187, 4, 4, 1);
+          box-shadow: none;
+        }
+
+        &.btn-elevated {
+          box-shadow: 0 2px 4px 0 rgba(204,0,0,0.12), 0 4px 8px 0 rgba(124,132,138,0.2);
+
+          &:hover,
+          &.btn-elevated--hover {
+            box-shadow: 0 4px 8px 0 rgba(204,0,0,0.12), 0 8px 12px 0 rgba(124,132,138,0.2);
+          }
+
+          &:active,
+          &.btn-elevated--active {
+            box-shadow: 0 0 4px 0 rgba(204,0,0,0.2);
+          }
+        }
+      }
+
+      &.btn-secondary {
+        background-color: $white;
+        color: $brand-color;
+
+        &:not(:hover):not(.btn-secondary--hover):not(:active):not(.btn-secondary--active):not(.btn-elevated) {
+          border: 1px solid rgba(27,37,50,0.12);
+
+          &:not(.btn-icon) {
+            height: $button-height + 1;
+          }
+        }
+
+        &.btn-small:not(:hover):not(.btn-secondary--hover):not(:active):not(.btn-secondary--active):not(.btn-elevated--active) {
+          height: $button-height-small + 1;
+        }
+
+        &:hover,
+        &.btn-secondary--hover {
+          box-shadow: 0 0 1px 0 rgba(27,37,50,0.12), 0 4px 8px 0 rgba(124,132,138,0.12);
+
+          &:not(.btn-elevated) {
+            margin: 0 1px 1px 1px;
+          }
+        }
+
+        &:active,
+        &.btn-secondary--active,
+        &.btn-elevated--active {
+          background-color: $grey-601;
+          box-shadow: none;
+
+          &:not(.btn-elevated) {
+            margin: 0 1px 1px 1px;
+          }
+        }
+
+        &.btn-elevated {
+          box-shadow: 0 0 1px 0 rgba(27,37,50,0.12), 0 4px 8px 0 rgba(124,132,138,0.12);
+
+          &:hover,
+          &.btn-elevated--hover {
+            box-shadow: 0 0 1px 0 rgba(27,37,50,0.12), 0 8px 12px 0 rgba(124,132,138,0.12);
+          }
+
+          &:active,
+          &.btn-elevated--active {
+            box-shadow: 0 0 4px 0 rgba(124,132,138,0.12);
+          }
+        }
+
+        &:not(:hover):not(:active):not(.btn-secondary--hover):not(.btn-secondary--active) ln-icon {
+          color: rgba(115,121,130,1);
+        }
+      }
+
+      &.btn-ghost {
+        background-color: transparent;
+        color: $brand-color;
+
+        &:hover,
+        &.btn-ghost--hover {
+          background-color: rgba(239, 240, 243, 1);
+        }
+
+        &:active,
+        &.btn-ghost--active {
+          background-color: rgba(245, 246, 248, 1)
+        }
+
+        &:not(:hover):not(:active):not(.btn-ghost--hover):not(.btn-ghost--active) ln-icon {
+          color: rgba(115,121,130,1);
+        }
+      }
+    }
+
+    &.disabled, &[disabled] {
+      background-color: $gray-100;
+      color: rgba(162, 167, 173, 1);
+
+      &.btn-elevated {
+        box-shadow: 0 0 4px 0 rgba(248,249,251,0.2);
+      }
+
+      &.btn-ghost {
+        background-color: transparent;
+      }
+    }
+
+    ln-icon {
+      i {
+        &, &.lernender-icon {
+          color: inherit;
+          cursor: default;
+
+          &:hover {
+            color: inherit;
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+}

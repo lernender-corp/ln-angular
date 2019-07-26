@@ -1,0 +1,17 @@
+/**
+  IE 11 Mixin:
+  Usage:
+  .site-header {
+      padding: 2rem;
+      font-size: 1.8rem;
+      @include IE {
+          padding-top: 4rem;
+          font-size: 2.4rem;
+      }
+  }
+ */
+ @mixin IE {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}

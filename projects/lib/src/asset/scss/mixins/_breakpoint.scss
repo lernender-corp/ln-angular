@@ -1,0 +1,72 @@
+/**
+  BreakPoints:
+  Usage:
+  .site-header {
+      padding: 2rem;
+      font-size: 1.8rem;
+      @include media_query('tablet-wide') {
+          padding-top: 4rem;
+          font-size: 2.4rem;
+      }
+  }
+ */
+$breakpoints: (
+  "x-small":      320px,
+  "phone":        400px,
+  "phone-wide":   480px,
+  "phablet":      560px,
+  "tablet-small": 640px,
+  "tablet":       768px,
+  "tablet-wide":  1024px,
+  "desktop":      1280px,
+  "desktop-wide": 1440px
+);
+
+@mixin desktop {
+  $width: map_get($breakpoints, "desktop");
+  @media only screen and (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin desktop-wide {
+  $width: map_get($breakpoints, "desktop-wide");
+  @media only screen and (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  $width: map_get($breakpoints, "tablet");
+  @media only screen and (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  $width: map_get($breakpoints, "tablet-small");
+  @media only screen and (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin phablet {
+  $width: map_get($breakpoints, "phablet");
+  @media only screen and (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin phone {
+  $width: map_get($breakpoints, "phablet");
+  @media only screen and (max-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin small {
+  $width: map_get($breakpoints, "x-small");
+  @media only screen and (max-width: #{$width}) {
+    @content;
+  }
+}

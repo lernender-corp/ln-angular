@@ -1,0 +1,125 @@
+//
+// Base Color(s)
+//
+$black: #000 !default;
+$white: #fff !default;
+//
+// Dark Grey Shades (90%)
+//
+$grey-910: #3F4950 !default;
+$grey-908: #48545C !default;
+$grey-906: #313C42 !default;
+$grey-904: #3B4B53 !default;
+$grey-905: #454E58 !default;
+$grey-900: #252525 !default;
+$grey-901: #FF19FF !default; // To whoever created this color. You need to define the variable in _colors.scss
+$grey-911: #1b2532 !default;
+//
+// Dark Grey Shades (80%)
+//
+$grey-806: #8B8B8B !default;
+$grey-808: #707070 !default;
+$grey-809: #606060 !default;
+$grey-810: #5D5D5D !default;
+$grey-812: #7C848A !default;
+//
+// Dark Grey Shades (70%)
+//
+$grey-704: #B4B9BC !default;
+$grey-706: #A2A8AC !default;
+$grey-708: #A3A9AD !default;
+$grey-710: #9A9A9A !default;
+//
+// Dark Grey Shades (60%)
+//
+$grey-598: #edf0f5 !default;
+$grey-600: #F4F5F7 !default;
+$grey-601: #F5F6F8 !default;
+$grey-602: #F2F2F2 !default;
+$grey-603: #CCCCCC !default;
+$grey-604: #D3D3D3 !default;
+$grey-605: #EEF0F3 !default;
+$grey-606: #EAEAEA !default;
+$grey-607: #cfd8dc !default;
+$grey-608: #E0E0E0 !default;
+$grey-609: #E6E9EE !default;
+$grey-610: #CECECE !default;
+$grey-611: #E8E9EB !default;
+//
+// Green
+//
+$green: #1CA543 !default;
+$green-100: #1b933a !default;
+//
+// Red
+//
+$pink-100: #c82787 !default;
+$red-100: #9d0220 !default;
+//
+// Blue
+//
+$blue-900: #5680AB !default;
+$indigo-100: #0c6bfb !default;
+$cyan-100: #12a5af !default;
+//
+// Purple
+//
+$purple-light: #E9D2FD !default;
+$purple-100: #8430d0 !default;
+//
+// Messaging Color
+//
+$message-error: #dd3435 !default;
+$message-warning: #f3b823 !default;
+$message-success: #54b34a !default;
+$message-information: #3966c3 !default;
+//
+// lernender Colors
+//
+$brand-color: #CC0000;
+$brand-600: rgba(204,0,0,0.4);
+$brand-100: rgba(204,0,0,0.08);
+$brand-200: rgba(204,0,0,0.12);
+$brand-blue: #0D6AFF;
+//
+// lernender Gray Colors
+//
+$gray-900: #1B2532;
+$gray-930: rgba(27,37,50,40);
+$gray-920: rgba(27, 37, 50, 0.28);
+$gray-910: rgba(27,37,50,.08);
+$gray-800: rgba(27,37,50,0.8);
+$gray-700: rgba(27,37,50,0.6);
+$gray-600: rgba(27,37,50,0.4);
+$gray-500:  rgba(27,37,50,0.16);
+$gray-501:  rgba(255, 255, 255, 0.2);
+$gray-502: rgba(124, 132, 138, 0.2);
+$gray-503: rgba(124, 132, 138, 0.12);
+$gray-400:  #E6E9EE;
+$gray-300:  #EEF0F3;
+$gray-200:  #F5F6F8;
+$gray-100:  #F8F9FB;
+$gray-50:  #E8EAE9;
+//
+// Faded colors
+//
+$faded-white: rgba(255, 255, 255, 0.8);
+//
+// State Colors#E69596
+//
+$gray-hover:  rgba(27,37,50,0.04);
+//
+// Base lernender Color(s)
+//
+$lernender-default: $brand-color !default;
+$lernender-accent: $brand-600 !default;
+$lernender-blue: $brand-blue !default;
+
+$hover: #BE0304 !default;
+$active: #BB0404 !default;
+$disabled: #F8F9FB !default;
+$input-error-background: rgba(204,0,0,0.08);
+//
+// Border color
+//
+$border-color:#d8d8d8;

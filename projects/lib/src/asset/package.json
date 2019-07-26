@@ -1,0 +1,13 @@
+{
+  "name": "tm-asset",
+  "version": "1.0.0",
+  "description": "lernender Assets For All Angular Applications",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Lovelidge, Shawn",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}

@@ -1,0 +1,11 @@
+<div class="ln-button" [class.hidden]="hidden">
+  <button
+    [ngClass]="parentClasses"
+    [class.disabled]="disabled"
+    [disabled]="disabled"
+    [class.hidden]="hidden"
+    (click)="handleClick($event)"
+  >
+    <ng-content></ng-content>
+  </button>
+</div>
