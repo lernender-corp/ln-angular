@@ -11,7 +11,6 @@ export * from './cdk-directive';
 export * from './cdk-model';
 export * from './cdk-pipe';
 export * from './cdk-service';
-export * from './cdk-test';
 export * from './cdk-template';
 export * from './cdk-component';
 export * from './cdk-library';
