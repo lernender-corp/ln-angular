@@ -1,0 +1,11 @@
+<div class="ln-image"
+     [hidden]="hidden"
+     [class.disabled]="disabled">
+	<div class="ln-image-container">
+		<img [src]="src"
+		     [ngStyle]="style"
+		     [title]="alt"
+		     (click)="handleClick($event)"/>
+	</div>
+</div>
+

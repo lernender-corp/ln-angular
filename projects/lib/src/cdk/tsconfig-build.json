@@ -1,0 +1,29 @@
+{
+  "extends": "../bazel-tsconfig-build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../dist/packages/cdk",
+    "rootDir": ".",
+    "rootDirs": [
+      ".",
+      "../../dist/packages/cdk"
+    ],
+    "paths": {
+      "@lernender/cdk/*": ["../../dist/packages/cdk/*"]
+    }
+  },
+  "files": [
+    "public-api.ts",
+    "typings.d.ts"
+  ],
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "flatModuleOutFile": "index.js",
+    "flatModuleId": "@lernender/cdk",
+    "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  }
+}

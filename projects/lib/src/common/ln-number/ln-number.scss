@@ -1,0 +1,31 @@
+@import '../../asset/scss/index';
+
+.ln-number {
+  @include font-size();
+  background-color: transparent;
+  cursor: default;
+  margin: 0;
+  color: inherit;
+  text-align: right;
+  padding: 0;
+
+  &.disabled {
+    @include disabled();
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  &.align-left {
+    text-align: left;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+
+  &.align-right {
+    text-align: right;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@lernender/cdk",
+  "version": "0.0.0-PLACEHOLDER",
+  "description": "Toyota Component Development Kit",
+  "main": "./bundles/cdk.umd.js",
+  "module": "./esm5/cdk.es5.js",
+  "es2015": "./esm2015/cdk.js",
+  "typings": "./cdk.d.ts",
+  "files": ["*"],
+  "keywords": [
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/animations": "0.0.0-NG",
+    "@angular/cdk": "0.0.0-NG",
+    "@angular/core": "0.0.0-NG",
+    "@angular/common": "0.0.0-NG",
+    "@lernender/core": "^1.2.0"
+  },
+  "dependencies": {
+    "tslib": "^1.7.1",
+    "lodash-es": "^4.17.11"
+  },
+  "schematics": "./schematics/collection.json",
+  "ng-update": {
+    "migrations": "./schematics/migration.json",
+    "packageGroup": [
+      "@lernender/cdk"
+    ]
+  },
+  "sideEffects": false
+}
+

@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig-build",
+  "files": ["public-api.ts", "../typings.d.ts"],
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "strictNullChecks": false,
+    "flatModuleOutFile": "index.js",
+    "flatModuleId": "@lernender/cdk/cdk-model",
+    "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true
+  }
+}

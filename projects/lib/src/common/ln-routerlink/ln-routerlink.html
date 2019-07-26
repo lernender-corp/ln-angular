@@ -1,0 +1,18 @@
+<div class="ln-routerlink"
+     [class.hidden]="hidden"
+     [class.disabled]="disabled">
+  <a class="ln-routerlink-atag"
+      [title]="label"
+      [class.active]="active"
+      [class.disabled]="disabled"
+      [ngStyle]="style"
+      [ngClass]="{
+       'uppercase' : pattern === 'uppercase',
+        'lowercase' : pattern === 'lowercase',
+        'capitalize' : pattern === 'capitalize',
+        '' : pattern === ''
+      }"
+     [routerLink]="route">
+    <ng-content></ng-content>
+  </a>
+</div>

@@ -1,6 +1,6 @@
 {
   "name": "@lernender/angular",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "peerDependencies": {
     "@angular/common": "^8.1.2",
     "@angular/core": "^8.1.2",

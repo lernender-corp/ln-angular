@@ -1,0 +1,15 @@
+// Configuration for IDEs only.
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "..",
+    "baseUrl": ".",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "@lernender/cdk/*": ["*", "./*"]
+    }
+  },
+  "include": ["./**/*.ts"]
+}

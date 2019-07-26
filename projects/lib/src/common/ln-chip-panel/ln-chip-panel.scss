@@ -1,0 +1,131 @@
+@import "../../asset/scss/index";
+
+$height: 50px;
+
+:host {
+}
+
+.ln-chip-panel {
+  width: inherit;
+  height: $height;
+
+  &.disabled {
+    @include disabled();
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  .ln-chip-panel-header {
+    &.hidden {
+      display: none;
+    }
+  }
+
+  ul.ln-chip-panel-items {
+    @include make-row();
+    @include align-items(center);
+    @include justify-content(flex-start);
+    padding: 0;
+    margin: 0;
+    height: inherit;
+    width: 100%;
+
+    li.ln-chip-panel-item {
+      height: inherit;
+      width: 100%;
+
+      &.list {
+        flex: 1 1 auto;
+        width: 100%;
+        height: $height;
+
+        .viewport {
+          height: inherit;
+          width: 100%;
+          overflow: hidden;
+          overflow: -moz-scrollbars-none;
+          -ms-overflow-style: none;
+          overflow-x: hidden;
+          overflow-y: hidden;
+
+          &::-webkit-scrollbar {
+            width: 0 !important
+          }
+
+          ::ng-deep .cdk-virtual-scroll-viewport {
+            overflow: hidden;
+          }
+
+          ::ng-deep .cdk-virtual-scroll-content-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+          }
+
+          ul.ln-chip-panel-list {
+            // @include  scroll-bar();
+            @include make-row();
+            @include align-items(center);
+            @include justify-content(flex-start);
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: $height;
+
+            li.ln-chip-panel-list-item {
+              flex: 1;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &.control {
+      	flex: 0 0 40px;
+        text-align: center;
+        position: relative;
+
+        ul.control-items {
+          @include make-row();
+          @include align-items(center);
+          @include justify-content(flex-start);
+          padding: 0;
+          margin: 0;
+          height: $height;
+
+          &:before {
+            content: "";
+            width: 40px;
+            height: 20px;
+            z-index: 2;
+            position: absolute;
+            right: 44px;
+            box-shadow: -28px 0 20px 0 $white inset;
+          }
+
+          li.control-item {
+            cursor: pointer;
+            margin: 0 5px;
+            z-index: 3;
+
+            &.disabled {
+              @include disabled();
+              color: $gray-500;
+            }
+          }
+        }
+      }
+
+      &.clear {
+      	flex: 0 0 30px;
+        text-align: center;
+        line-height: $height;
+      }
+    }
+  }
+}

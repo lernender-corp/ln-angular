@@ -1,0 +1,22 @@
+<div class="ln-properties">
+  <div class="attribute-grid">
+    <table>
+      <thead>
+      <tr>
+        <th>properties</th>
+        <th>required</th>
+        <th>default</th>
+        <th>description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let attr of attributes">
+        <td>{{attr.name}}</td>
+        <td [class.required]="attr.required === 'required'">{{attr.required}}</td>
+        <td>{{attr.default}}</td>
+        <td><div [innerHTML]="attr.description"></div></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

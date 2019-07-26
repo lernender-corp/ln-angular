@@ -1,0 +1,39 @@
+<div
+  class="ln-textarea"
+  [class.hidden]="hidden"
+  [class.disabled]="disabled"
+  (click)="handleOnClick($event)"
+>
+  <label
+    class="ln-label"
+    [class.disabled]="disabled"
+    [class.hidden]="!hasLabel()"
+  >
+    <span [class.error]="fc?.errors && (fc?.dirty || fc?.touched)">{{
+      label
+    }}</span
+    ><span
+      class="ln-label-description"
+      [class.hidden]="!(fc?.errors && (fc?.dirty || fc?.touched))"
+      [class.error-description]="fc?.errors && (fc?.dirty || fc?.touched)"
+      >{{ description }}</span
+    >
+  </label>
+  <textarea
+    [attr.id]="uid"
+    [attr.placeholder]="placeholder"
+    class="ln-textarea-control"
+    [ngClass]="{
+      data: value?.length > 0,
+      error: fc?.invalid && (fc?.dirty || fc?.touched),
+      disabled: disabled
+    }"
+    [minLength]="minlength"
+    [maxLength]="maxlength"
+    [attr.rows]="rows"
+    [attr.cols]="cols"
+    [attr.placeholder]="placeholder"
+    [(ngModel)]="value"
+    [cdkTooltip]="tooltip"
+  ></textarea>
+</div>

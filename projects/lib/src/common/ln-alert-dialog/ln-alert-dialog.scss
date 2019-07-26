@@ -1,0 +1,42 @@
+@import '../../asset/scss/index';
+
+.ln-alert-container {
+
+  padding:32px 32px 24px;
+  display: inline-block;
+
+  .ln-alert-header {
+    color: $lernender-default;
+    font-size: $font-large;
+    font-weight: 500;
+  }
+  .ln-alert-body {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: $gray-800;
+    font-size: $font-small;
+    font-family: $font-family;
+  }
+  .ln-alert-action-container {
+    padding-top:40px;
+
+    ul.ln-alert-action-items {
+      @include make-row();
+      @include flex-wrap(nowrap);
+      @include justify-content(flex-end);
+      list-style-type: none;
+
+      @at-root :host.buttons-left #{&} {
+        @include justify-content(flex-start);
+      }
+
+      li.ln-alert-action-item {
+        @include flex(0 0 auto);
+
+        &:not(:first-of-type) {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+}

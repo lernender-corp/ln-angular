@@ -1,0 +1,9 @@
+<div class="ln-container" [class.hidden]="hidden" [class.disabled]="disabled" [ngStyle]="style">
+  <div
+    class="ln-container-inner"
+    [class.vertical]="direction === 'vertical'"
+    [class.horizontal]="direction === 'horizontal'"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

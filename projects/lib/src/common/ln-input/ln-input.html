@@ -1,0 +1,42 @@
+<div class="ln-input" [class.hidden]="hidden" [class.disabled]="disabled">
+  <label
+    *ngIf="label?.length > 0"
+    class="ln-label"
+    [ngClass]="{
+      'data': value?.length > 0,
+      'label-active': (value?.length > 0) && (disabled),
+      'error': fc?.invalid && (fc?.dirty || fc?.touched),
+      'disabled': disabled
+    }"
+    [attr.for]="uid"
+    >{{ label }}</label
+  >
+  <div class="ln-input-icon">
+    <input #ref
+      class="ln-input-textbox ln-input-icon-container"
+      [ngClass]="{
+        'data': value?.length > 0,
+        'error': fc?.invalid && (fc?.dirty || fc?.touched),
+        'disabled': disabled
+      }"
+      [class.primary]="name==='primary'"
+      [class.grid]="name==='grid'"
+      [class.fill]="name==='fill'"
+      [attr.type]="type"
+      [attr.disabled]="disabled ? disabled : null"
+      [placeholder]="placeholder"
+      [(ngModel)]="value"
+      (keydown.enter)="handleEnter()"
+      (keydown.tab)="handleTab()"
+    />
+    <i *ngIf="!label && name !== 'grid'"
+      class= "toyota-icon rdr-no"
+      [ngClass]="{
+        'icon-color': value?.length > 0,
+        'error': fc?.invalid && (fc?.dirty || fc?.touched),
+        'disabled': disabled
+      }"
+    >
+    </i>
+  </div>
+</div>

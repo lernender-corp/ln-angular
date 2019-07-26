@@ -1,0 +1,10 @@
+<div class="ln-percent"
+     [class.hidden]="hidden"
+     [class.disabled]="disabled"
+     (click)="handleOnClick($event)"
+     [ngClass]="{
+       'align-left' : align === 'left',
+       'align-center' : align === 'center',
+       'align-right' : align === 'right'}">
+  <span>{{ value | percent:pattern }}</span>
+</div>

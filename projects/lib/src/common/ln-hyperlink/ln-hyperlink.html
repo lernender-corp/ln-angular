@@ -1,0 +1,10 @@
+<div class="ln-hyperlink"
+     [hidden]="hidden">
+	<a class="ln-hyperlink-atag"
+     [class.active]="active"
+     [class.uppercase]="uppercase"
+	   [class.disabled]="disabled"
+	   (click)="handleClick($event)">
+		{{value}}
+	</a>
+</div>

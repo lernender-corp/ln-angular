@@ -1,0 +1,16 @@
+<div class="ln-icon">
+  <i
+    *ngIf="type === 'toyota-icon'"
+    [ngStyle]="style"
+    [ngClass]="classNameArr"
+    [class.green]="color === 'green'"
+    [class.blue]="color === 'blue'"
+    [class.red]="color === 'red'"
+    [class.white]="color === 'white'"
+    [class.active]="active"
+    [class.hidden]="hidden"
+    [class.disabled]="disabled"
+    (click)="handleOnClick($event)"
+  >
+  </i>
+</div>

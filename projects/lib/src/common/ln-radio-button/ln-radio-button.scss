@@ -1,0 +1,25 @@
+@import '../../asset/scss/index';
+
+.ln-radio-button {
+  @include font-size();
+  background-color: transparent;
+  color: $grey-908;
+
+  &.disabled {
+    @include disabled();
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  .ln-radio-button-items {
+    @include make-column();
+    padding: 0;
+
+    .ln-radio-button-item {
+      @include flex(1 1 auto);
+      height: 30px;
+    }
+  }
+}

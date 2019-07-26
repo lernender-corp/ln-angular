@@ -1,0 +1,12 @@
+<div class="toggle"
+  [class.hidden]="hidden"
+  [class.label-after]= "labelPosition === 'after'"
+  (click)="handleClick($event)"
+>
+  <label *ngIf="label" [class.after]= "labelPosition === 'after'"
+  >
+    {{ label }}
+  </label>
+  <input type="checkbox" [checked]="value"/>
+  <button #button class="toggle-btn" [ngClass]="{'toggle-on': value, 'toggle-off': !value}" [class.icon]="toggleIcon" [disabled]="disabled" [attr.before-content]="toggleOnText" [attr.after-content]="toggleOffText"></button>
+</div>

@@ -1,0 +1,112 @@
+@import '../../asset/scss/index';
+
+.toggle {
+  @include make-row();
+
+  label {
+    cursor: pointer;
+    padding-right: 5px;
+    &.after {
+      padding-left: 5px;
+      padding-right: unset;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  .toggle-btn {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    outline: 0;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 14px;
+    padding: 2px;
+    transition: all 0.4s ease;
+    border: 1px solid $gray-50;
+    padding-right: 5px;
+    background-color: $gray-600;
+    height: 28px;
+    width: 45px;
+
+    &.toggle-on {
+      background: $brand-blue;
+    }
+
+    &.toggle-on::after {
+      left: 50%;
+      font-family: toyota-icon!important;
+      font-size: 20px;
+      color: $white;
+      content: '\f058';
+      width: 20px;
+      background-color: transparent;
+    }
+
+    &.icon::after {
+      content: '\f031';
+    }
+
+    &.toggle-on::before {
+      font-family: toyota-icon!important;
+      content: attr(before-content);
+      color: $white;
+      font-size: 12px;
+    }
+
+    &.toggle-off::after {
+      font-family: toyota-icon!important;
+      font-size: 12px;
+      content: attr(after-content);
+      color: $white;
+    }
+
+    &.toggle-on:active {
+      box-shadow: none;
+    }
+
+    &.toggle-on:active::after {
+      margin-left: 10px;
+    }
+  }
+
+  .toggle-btn:focus::after,.toggle-btn:active::after {
+    box-shadow: 0 0 1px 0 $gray-600, 0 4px 12px 0 $gray-503;
+  }
+
+  .toggle-btn::before {
+    font-family: toyota-icon!important;
+    font-size: 20px;
+    color: $white;
+    left: 0;
+    position: relative;
+    display: block;
+    content: '\f058';
+    border-radius: 14px;
+    transition: all 0.3s
+      cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      padding 3s ease, margin 3s ease;
+    width: 20px;
+    background-color: transparent;
+    box-shadow: 0 0 1px 0 $gray-600, 0 4px 12px 0 $gray-503;
+  }
+
+  .toggle-btn:active::after {
+    padding-right: -20px;
+  }
+
+  &.label-after {
+
+    .toggle-btn {
+      order: 1;
+    }
+
+    label {
+      order: 2;
+    }
+  }
+}

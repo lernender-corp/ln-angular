@@ -1,0 +1,9 @@
+<div class="ln-date"
+     [hidden]="hidden"
+     [class.disabled]="disabled">
+	<div class="ln-date-container">
+		<div (click)="handleOnClick($event)">
+			{{ value | date:pattern  }}
+		</div>
+	</div>
+</div>

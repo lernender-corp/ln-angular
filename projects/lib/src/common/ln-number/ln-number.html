@@ -1,0 +1,11 @@
+<div class="ln-number"
+     [class.hidden]="hidden"
+     [class.disabled]="disabled"
+     (click)="handleOnClick($event)"
+     [ngStyle]="style"
+     [ngClass]="{
+      'align-left' : align === 'left',
+      'align-center' : align === 'center',
+      'align-right' : align === 'right'}">
+  <span>{{ value | number:pattern }}{{ !isNumber ? placeholder : '' }}</span>
+</div>

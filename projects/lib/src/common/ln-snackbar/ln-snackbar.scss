@@ -1,0 +1,93 @@
+@import "../../asset/scss/index";
+
+.ln-snackbar {
+  display: inline-flex;
+  font-size: 12px;
+  line-height: 16px;
+  background: $lernender-default;
+  color: $white;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 $brand-200, 0 8px 12px 0 $gray-502;
+  position: fixed;
+  z-index: $zindex-popover;
+  &.disabled {
+    @include disabled();
+  }
+  &.hidden {
+    display: none;
+  }
+  &__message {
+    padding: 8px 16px;
+  }
+  &__actions {
+    display: flex;
+    padding: 8px;
+    cursor: pointer;
+    border-left: 1px solid $gray-501;
+    &-action {
+      margin-right: 8px;
+    }
+    .ln-icon i.toyota-icon:hover {
+      color: $white;
+    }
+  }
+}
+
+/* ----------------------------------------------
+ * Animations for BOTTOM CENTER || TOP CENTER
+ * ----------------------------------------------
+ */
+
+/**
+ * ----------------------------------------
+ * animation slide-top slide-bottom
+ * ----------------------------------------
+ */
+@keyframes slide-top-center {
+  /* Starting and Ending position of x-coordinate  is 50% to account centering of the element */
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-50%, -20px);
+  }
+}
+/**
+ * ----------------------------------------
+ * animation slide-bottom
+ * ----------------------------------------
+ */
+@keyframes slide-bottom-center {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(-50%, 20px);
+  }
+}
+
+/* ----------------------------------------------
+ * Animations for BOTTOM LEFT START || TOP RIGHT END
+ * ----------------------------------------------
+ */
+/**
+ * ----------------------------------------
+ * animation slide-top slide-bottom
+ * ----------------------------------------
+ */
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px);
+  }
+}
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-20px);
+  }
+}

@@ -1,0 +1,40 @@
+<div class="ln-slide-panel">
+  <div
+    [attr.id]="panel.left?.bar?.uid"
+    class="ln-slide-panel-left-bar"
+    [ngStyle]="panel.left?.bar?.style"
+    (click)="handleToggle(panel.left?.bar?.type)"
+  >
+    <ng-content select=".ln-slide-panel-left-bar"></ng-content>
+  </div>
+  <div
+    [attr.id]="panel.left?.panel?.uid"
+    class="ln-slide-panel-left-panel"
+    [ngStyle]="panel.left?.panel?.style"
+  >
+    <ng-content select=".ln-slide-panel-left-panel"></ng-content>
+  </div>
+  <div
+    [attr.id]="panel.center?.uid"
+    class="ln-slide-panel-center"
+    [ngStyle]="panel.center.style">
+    <ng-content select=".ln-slide-panel-center"></ng-content>
+  </div>
+  <div
+    [attr.id]="panel.right?.panel?.uid"
+    class="ln-slide-panel-right-panel"
+    [ngStyle]="panel.right?.panel?.style"
+    [class.open]="panel?.right?.panel?.isOpen()"
+  >
+    <ng-content select=".ln-slide-panel-right-panel"></ng-content>
+  </div>
+  <div
+    [attr.id]="panel.right?.bar?.uid"
+    class="ln-slide-panel-right-bar"
+    [ngStyle]="panel.right?.bar?.style"
+    [class.open]="panel.right?.bar?.isOpen()"
+    (click)="handleToggle(panel.right?.bar?.type)"
+  >
+    <ng-content select=".ln-slide-panel-right-bar"></ng-content>
+  </div>
+</div>
