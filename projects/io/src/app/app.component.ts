@@ -7,7 +7,6 @@ import {Action } from '@lernender/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'io';
   constructor() {
     const action = new Action();
   }
