@@ -1,0 +1,10 @@
+<div class="ln-toolbar" [hidden]="hidden" [class.disabled]="disabled">
+  <div
+    class="ln-toolbar-content"
+    [ngClass]="{
+      vertical: orientation === 'vertical',
+      horizontal: orientation === 'horizontal'
+    }">
+    <ng-content></ng-content>
+  </div>
+</div>

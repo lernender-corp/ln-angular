@@ -1,0 +1,128 @@
+@import "../../asset/scss/index";
+
+:host {
+}
+/* All styles apply for default version, small versio styles will override if it is required */
+.ln-section {
+  @include make-column();
+  @include flex-wrap(nowrap);
+  padding: 0;
+  &.disabled {
+    @include disabled();
+  }
+  &.hidden {
+    display: none;
+  }
+  &-banner {
+    @include make-row();
+    @include flex-wrap(nowrap);
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include font-family(16px);
+    cursor: pointer;
+
+    &-icon-container {
+      width: 80px;
+      text-align: center;
+      flex: 0 0 auto;
+      .ln-section-banner-icon {
+        visibility: hidden;
+      }
+      &.hidden {
+        display: none;
+      }
+      &.right-icon {
+        order: 2;
+      }
+    }
+
+    & .ln-section-banner-inner {
+      padding: 16px 0;
+      width: 100%;
+      @include flexbox();
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
+      @include align-items(center);
+      p {
+        @include font-size();
+      }
+      .label {
+        font-weight: bold;
+      }
+      &.right-icon {
+        order: 1;
+      }
+      &-text {
+        width: 100%;
+      }
+      &:hover {
+        color: $hover;
+        .ln-section-banner-icon {
+          visibility: visible;
+        }
+      }
+    }
+    .ln-section-content-action {
+      ul.ln-section-content-action-items {
+        @include make-row();
+        .ln-section-content-action-item {
+          margin: 0 12px;
+        }
+      }
+    }
+  }
+  /* Styles for small version */
+  &.small {
+    .ln-section-content {
+      &.active {
+        margin-bottom: 20px;
+      }
+    }
+    .ln-section-banner {
+      &-icon-container {
+        width: 40px;
+        text-align: center;
+        flex: 0 0 auto;
+      }
+      &-inner {
+        @include font-size(10px);
+        text-transform: uppercase;
+        padding: unset;
+        &-text {
+          padding: 10px 0;
+        }
+      }
+    }
+    &.border-top {
+      & .ln-section-banner-inner-text {
+        box-shadow: 0 -1px 0 0 $gray-910;
+      }
+    }
+  }
+  /* Styles for section content */
+  .ln-section-content {
+    @include flex(0 0 auto);
+    @include align-items(stretch);
+    // Styles for dropdown effect
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+    border: 0;
+    transition: opacity 0.8s ease-in-out;
+    &.active {
+      opacity: 1;
+      height: auto;
+    }
+    &.hidden {
+      display: none;
+    }
+  }
+  &:not(.small) {
+    &.border-top {
+      box-shadow: 0 -1px 0 0 $grey-910;
+    }
+    .ln-section-content.active {
+      margin-bottom: 30px;
+    }
+  }
+}

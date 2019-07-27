@@ -1,0 +1,89 @@
+@import '../../asset/scss/index';
+
+:host {
+  @include default-box();
+}
+
+
+.ln-grid-icon-bg {
+  padding: 4px;
+  font-size: 10px;
+  color: $white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  @include radius(4px);
+  @include align-items(center);
+  @include justify-content(center);
+  min-width: 21px;
+  &.purple {
+    background-color: $purple-100;
+  }
+  &.indigo {
+    background-color: $indigo-100;
+  }
+  &.gray {
+    background-color: $grey-808;
+  }
+  &.pink {
+    background-color: $pink-100;
+  }
+  &.red {
+    background-color: $red-100;
+  }
+  &.cyan {
+    background-color: $cyan-100;
+  }
+  &.green {
+    background-color: $green-100;
+  }
+}
+
+.ln-grid-icon {
+   display: flex;
+   justify-content: center;
+
+   .ln-grid-icon-inner {
+      display: flex;
+   }
+
+  &.ln-grid-label-match-icon-hover {
+    &:hover {
+      color: $brand-color;
+      cursor: pointer;
+    }
+  }
+
+  .ln-grid-icon-container {
+    display: inline-block;
+    &.right {
+      height: auto;
+      order: 2;
+      padding-left: 4px;
+    }
+    &.left {
+      padding-right: 4px;
+    }
+  }
+  .ln-grid-icon-icon {
+    &.right {
+      height: auto;
+      order: 2;
+    }
+  }
+
+  .ln-grid-icon-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.left {
+      order: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      direction: rtl;
+    }
+  }
+}

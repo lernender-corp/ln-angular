@@ -1,0 +1,56 @@
+@import '../../asset/scss/index';
+
+:host {
+  @include default-box();
+}
+
+.ln-color-swatch {
+  @include font-size();
+
+  .ln-color-swatch-label {
+    margin: 5px;
+
+    &.disabled {
+      @include disabled();
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  ul.ln-color-swatch-items {
+    @include make-row();
+    @include align-items(center);
+    @include justify-content(flex-start);
+    padding: 0;
+    margin: 0;
+
+    li.ln-color-swatch-item {
+      @include flex(0 0 25px);
+      padding: 0 5px;
+
+      .ln-color-swatch-item-exterior-color {
+				text-align: left;
+				width: auto;
+
+        .ln-color-swatch-item-exterior-color-hex {
+          .circle {
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: block;
+          }
+        }
+			}
+
+			.ln-color-swatch-item-interior-color {
+				img {
+					width: 20px;
+					height: 20px;
+					display: block;
+				}
+			}
+    }
+  }
+}

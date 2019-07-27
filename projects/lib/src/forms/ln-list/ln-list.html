@@ -1,0 +1,33 @@
+<div class="ln-list" [ngStyle]="style" [hidden]="hidden">
+  <ul class="ln-list-items">
+    <li
+      class="ln-list-item"
+      *ngFor="let item of data"
+    >
+      <div class="ln-list-item-inner">
+        <ln-icon
+          class="ln-list-item-icon"
+          [ngClass]="{
+            right: textAlign(item) === 'left'
+          }"
+          [color]="item?.color"
+          [ngStyle]="item?.style"
+          (click)="handleOnClickEvent($event, item)"
+          [name]="item?.name"
+          [hidden]="item?.hidden"
+          [class.disabled]="item?.disabled"
+        ></ln-icon>
+        <div
+          class="ln-list-item-label"
+          [hidden]="item?.label?.length === 0"
+          [ngClass]="{
+            left: textAlign(item) === 'left'
+          }"
+          (click)="handleOnClickEvent($event, item)"
+        >
+          {{ item?.label }}
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

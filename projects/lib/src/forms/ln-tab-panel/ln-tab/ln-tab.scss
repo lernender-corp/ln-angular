@@ -1,0 +1,38 @@
+@import '../../../asset/scss/index';
+
+:host {
+
+}
+
+.ln-tab {
+  @include font-size();
+  @include default-box();
+  text-align: left;
+  -webkit-transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+  transition: opacity 1s ease-out;
+
+  &.fadeIn,
+  &.fade-in {
+    opacity: 1;
+  }
+
+  &.fadeOut,
+  &.fade-out {
+    opacity: 0;
+  }
+
+  &.disabled {
+    @include disabled();
+  }
+
+  &.hidden {
+    display: none;
+
+  }
+
+  .ln-tab-container {
+    @include default-box();
+  }
+}

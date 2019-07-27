@@ -1,0 +1,182 @@
+@import '../../asset/scss/index';
+
+.ln-carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+  section.ln-carousel-container {
+    overflow: hidden;
+    height: inherit;
+    text-align: center;
+
+    div.carousel-items {
+      // @include flexbox();
+      @include inline-flex();
+      left: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: inherit;
+      transform: translateX(100%);
+
+      &.is-reversing {
+        transform: translateX(-100%);
+      }
+
+      &.is-set {
+        transform: none;
+        transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      @include desktop {
+        @include justify-content(center);
+      }
+
+    }
+  }
+
+  .ln-carousel-indicators-container {
+    width: 100%;
+    bottom: 40px;
+    position: absolute;
+    z-index: 11;
+    // border: 1px solid blue;
+
+    ol.ln-carousel-indicators {
+      @include make-row();
+      @include align-items(center);
+      @include justify-content(center);
+      @include flex-wrap(nowrap);
+      text-align: center;
+      text-transform: uppercase;
+      display: block;
+      list-style-type: none;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+      padding-inline-start: 0;
+
+
+      li.ln-carousel-indicator {
+        @include flex(1 1 auto);
+        margin: 5px;
+        cursor: default;
+        display: inline-block;
+        height: 4px;
+        width: 4px;
+        cursor: pointer;
+        background-color: rgba(104, 101, 010, .63);
+        box-shadow: 0 0 0 1px rgba( 255, 255, 255, .2);
+        border-radius: 50%;
+
+        &.active {
+          width: 6px;
+          height: 6px;
+          background-color: #007aFF;
+          box-shadow: 0 0 4px 0 #0099FF , 0 0 1px 1px #ffffff;
+        }
+      }
+    }
+  }
+
+  .ln-carousel-control-container {
+    position: absolute;
+    top: 50%;
+
+    &.right {
+      right: 40px;
+
+      .ln-icon {
+        margin-left: 2px
+      }
+
+      // Hover effect put on .right to overwrite default color effect from .ln-icon
+      :hover {
+        color: #fff;
+      }
+
+      &.disabled {
+        @include disabled();
+        color: rgb(128, 128, 128);
+      }
+    }
+
+    &.left {
+      left: 40px;
+
+      // Hover effect put on .left to overwrite default color effect from .ln-icon
+      :hover {
+        color: #fff;
+      }
+
+      &.disabled {
+        @include disabled();
+        color: rgb(128, 128, 128);
+      }
+    }
+  }
+
+  .ln-carousel-control {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    position: relative;
+    bottom: 20px;
+    color: #fff;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px 0 rgba(204,0,0,0.12), 0 4px 8px 0 rgba(124,132,138,0.2);
+    z-index: 5;
+    background-repeat: repeat-x;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-color: #cc0000;
+
+    .ln-icon {
+      @include flexbox();
+    }
+
+    @include phone {
+      display: none;
+    }
+
+    &.right {
+      right: 40px;
+
+      .ln-icon {
+        margin-left: 2px
+      }
+
+      // Hover effect put on  .left to overwrite default color effect from .ln-icon
+      :hover {
+        color: #fff;
+      }
+
+      &.disabled {
+        @include disabled();
+        color: rgb(128, 128, 128);
+      }
+    }
+
+    &.left {
+      left: 40px;
+
+      // Hover effect put on  .left to overwrite default color effect from .ln-icon
+      :hover {
+        color: #fff;
+      }
+
+      &.disabled {
+        @include disabled();
+        color: rgb(128, 128, 128);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import '../../asset/scss/index';
+
+ln-grid-filter {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+
+  ln-input {
+    height: inherit;
+    width: inherit;
+
+    input.grid {
+      height: 100%;
+      border: none;
+    }
+  }
+}

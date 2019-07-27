@@ -1,0 +1,15 @@
+@import '../../asset/scss/index';
+
+:host {
+	width: inherit;
+}
+
+.ln-grid-text {
+	width: inherit;
+
+	ln-text {
+		@include highlightable();
+		display: inline-flex;
+		max-width: 100%;
+	}
+}

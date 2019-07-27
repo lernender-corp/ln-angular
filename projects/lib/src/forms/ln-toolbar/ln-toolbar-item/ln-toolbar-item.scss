@@ -1,0 +1,25 @@
+@import '../../../asset/scss/index';
+
+:host {
+  @include flex(1 1 100%);
+}
+
+.ln-toolbar-item {
+  @include font-size();
+  padding: 0 5px;
+  @include flex(1 1 auto);
+
+  &.start,
+  &.right {
+    text-align: start;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.end,
+  &.left {
+    text-align: end;
+  }
+}

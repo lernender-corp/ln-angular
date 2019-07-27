@@ -1,0 +1,19 @@
+@import '../../asset/scss/index';
+
+:host {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.ln-accordion-panel {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  border-radius: inherit;
+
+  &.hidden {
+    display: none;
+  }
+}
