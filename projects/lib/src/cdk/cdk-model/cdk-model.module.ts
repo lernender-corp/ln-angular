@@ -11,7 +11,6 @@ import { Carousel } from './common/carousel';
 import { CdkDataSource } from './generic/datasource';
 import { Color } from './vehicle/color';
 import { Container } from './generic/container';
-import { DealerOption } from './dealer/dealer-option';
 import { Engine } from './vehicle/engine';
 import { Environment } from './common/environment';
 import { ExteriorColor } from './vehicle/exteriorColor';
@@ -22,10 +21,8 @@ import { InteriorColor } from './vehicle/interiorColor';
 import { MPG } from './vehicle/mpg';
 import { Media } from './vehicle/media';
 import { Model } from './vehicle/model';
-import { MultiVehicle } from './dealer/special-offer/multi-vehicle';
+
 import { Node } from './common/node';
-import { OfferBundle } from './dealer/special-offer/offer-bundle';
-import { OfferCard } from './dealer/special-offer/offer-card';
 import { Option } from './vehicle/option';
 import { PageScrollInstance } from './page-scroll/page-scroll-instance';
 import { Pane } from './generic/pane';
@@ -34,7 +31,6 @@ import { Price } from './vehicle/price';
 import { Promote } from './vehicle/promote';
 import { SafetyRating } from './vehicle/safetyRating';
 import { SlidePanel } from './generic/slide-panel';
-import { SpecialOffer } from './dealer/special-offer/special-offer';
 import { StandardOption } from './vehicle/standard-option';
 import { Transmission } from './vehicle/transmission';
 import { Vehicle } from './vehicle/vehicle';
@@ -48,7 +44,6 @@ const CDK_MODELS = [
   CdkDataSource,
   Color,
   Container,
-  DealerOption,
   Engine,
   Environment,
   ExteriorColor,
@@ -59,10 +54,7 @@ const CDK_MODELS = [
   MPG,
   Media,
   Model,
-  MultiVehicle,
   Node,
-  OfferBundle,
-  OfferCard,
   Option,
   PageScrollInstance,
   Pane,
@@ -71,7 +63,6 @@ const CDK_MODELS = [
   Promote,
   SafetyRating,
   SlidePanel,
-  SpecialOffer,
   StandardOption,
   Transmission,
   Vehicle,

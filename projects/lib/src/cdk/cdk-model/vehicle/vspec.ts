@@ -1,6 +1,5 @@
 import { Audit, Library, Simple } from '@lernender/core';
 import { Vehicle } from './vehicle';
-import { DealerPersonnel } from '../dealer/dealer-personnel';
 
 const minimumDate: Date = new Date(1970, 0, 1);
 
@@ -10,7 +9,6 @@ export class Vspec extends Simple {
   public message: string;
   public token: string;
   public dealerCd: string;
-  public dealerPersonnel: DealerPersonnel;
   public audit: Audit;
   public vehicles: Vehicle[];
 
@@ -67,8 +65,6 @@ export class Vspec extends Simple {
     this.message = Library.init(options, 'message', true);
     this.token = Library.init(options, 'token', true);
     this.dealerCd = Library.init(options, 'dealerCd');
-
-    this.dealerPersonnel = new DealerPersonnel(Library.init(options, 'dealerPersonnel', {}));
     this.audit = new Audit(Library.init(options, 'audit', {}));
 
     this.vehicles = [];
