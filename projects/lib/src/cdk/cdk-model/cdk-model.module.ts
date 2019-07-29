@@ -6,7 +6,6 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 /**
  * Common Model(s)
  */
-import { Attribute } from './common/attribute';
 import { AuthenticationConfig } from './authentication/authentication-config';
 import { Carousel } from './common/carousel';
 import { CdkDataSource } from './generic/datasource';
@@ -34,7 +33,6 @@ import { Panel } from './generic/panel';
 import { Price } from './vehicle/price';
 import { Promote } from './vehicle/promote';
 import { SafetyRating } from './vehicle/safetyRating';
-import { Series } from './common/series';
 import { SlidePanel } from './generic/slide-panel';
 import { SpecialOffer } from './dealer/special-offer/special-offer';
 import { StandardOption } from './vehicle/standard-option';
@@ -45,7 +43,6 @@ import { Vspec } from './vehicle/vspec';
 
 
 const CDK_MODELS = [
-  Attribute,
   AuthenticationConfig,
   Carousel,
   CdkDataSource,
@@ -73,7 +70,6 @@ const CDK_MODELS = [
   Price,
   Promote,
   SafetyRating,
-  Series,
   SlidePanel,
   SpecialOffer,
   StandardOption,

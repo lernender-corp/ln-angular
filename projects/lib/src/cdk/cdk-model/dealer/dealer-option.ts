@@ -1,5 +1,4 @@
 import { Library, Image, Action } from '@lernender/core';
-import { Attribute } from '../common/attribute';
 
 export class DealerOption extends Action {
   public dealerCd: string;
@@ -14,7 +13,6 @@ export class DealerOption extends Action {
   public thumbNailImgPath: string;
   public detailImgPath: string;
   public activeStatus: string;
-  public attributes: Attribute[];
   public productId: number;
   public subcategoryId: number;
   public fileName: string;
@@ -42,10 +40,6 @@ export class DealerOption extends Action {
     this.detailImgPath = Library.init(options, 'detailImgPath');
     this.activeStatus = Library.init(options, 'activeStatus');
     this.productId = Library.init(options, 'productId', 0);
-    this.attributes = [];
-    if (Library.hasOwnProperty(options, 'attributes')) {
-      this.attributes = options.attributes.map(o => new Attribute(o));
-    }
     this.subcategoryId = Library.init(options, 'subcategoryId', 0);
     this.fileName = Library.init(options, 'fileName');
     this.updatedAt = Library.init(options, 'updatedAt');

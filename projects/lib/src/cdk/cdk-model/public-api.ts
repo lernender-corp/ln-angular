@@ -14,11 +14,9 @@ export * from './cdk-model.module';
 // Export Models
 //
 export * from './authentication/authentication-config';
-export * from './common/attribute';
 export * from './common/carousel';
 export * from './common/environment';
 export * from './common/node';
-export * from './common/series';
 export * from './dealer/dealer-option';
 export * from './dealer/special-offer/multi-vehicle';
 export * from './dealer/special-offer/offer-bundle';
