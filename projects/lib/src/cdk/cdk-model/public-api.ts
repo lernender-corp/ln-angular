@@ -17,7 +17,6 @@ export * from './authentication/authentication-config';
 export * from './common/carousel';
 export * from './common/environment';
 export * from './common/node';
-export * from './filter/filter-message';
 export * from './generic/container';
 export * from './generic/datasource';
 export * from './generic/pane';

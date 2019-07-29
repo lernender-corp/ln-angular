@@ -13,7 +13,6 @@ import { Container } from './generic/container';
 import { Engine } from './vehicle/engine';
 import { Environment } from './common/environment';
 
-import { FilterMessage } from './filter/filter-message';
 import { Flags } from './vehicle/flags';
 import { Grid } from './tabular/grid';
 
@@ -44,7 +43,6 @@ const CDK_MODELS = [
   Engine,
   Environment,
 
-  FilterMessage,
   Flags,
   Grid,
 
