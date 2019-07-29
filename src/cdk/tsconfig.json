@@ -5,7 +5,7 @@
     "rootDir": "..",
     "baseUrl": ".",
     "paths": {
-      "@lernender/cdk/*": ["*", "./*"]
+      "@lernender/cdk/*": ["./*"]
     }
   },
   "include": ["./**/*.ts"]

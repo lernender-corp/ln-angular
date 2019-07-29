@@ -1,19 +1,10 @@
 {
   "name": "@lernender/common",
   "description": "Lernender Library",
-  "main": "./bundles/common.umd.js",
-  "module": "./esm5/common.es5.js",
-  "es2015": "./esm2015/common.js",
-  "typings": "./common.d.ts",
-  "files": [
-    "*"
-  ],
   "license": "ISC",
   "scripts": {
-    "postpack": "node scripts/post-pack",
-    "build": "gulp build-release-packages && npm run post-build",
+    "build": "gulp build-release-packages",
     "clean": "node scripts/clean",
-    "post-build": "node scripts/post-build.js common",
     "lint": "tslint \"src/common/**/*.ts\" --force --format verbose"
   },
   "version": "1.0.0",

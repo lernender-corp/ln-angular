@@ -3,10 +3,9 @@
 // node_modules/@angular/core/core.ngsummary.json
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "es2015"
-    ],
+     "module": "umd",
+     "moduleResolution": "node",
+     "lib": ["es2015", "dom", "es2016.array.include"],
     "experimentalDecorators": true,
     "types": []
   },
@@ -14,6 +13,7 @@
     "node_modules/@lernender/**/*"
   ],
   "exclude": [
+    "node_modules/@angular/bazel/**",
     "node_modules/@angular/compiler-cli/**",
     "node_modules/@angular/**/testing/**"
   ]

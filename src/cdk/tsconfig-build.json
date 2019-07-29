@@ -5,15 +5,13 @@
     "outDir": "../../dist/packages/cdk",
     "rootDir": ".",
     "rootDirs": [
+      ".",
       "../../dist/packages/cdk"
     ],
     "paths": {
-      "@lernender/cdk/*": ["*", "../../dist/packages/cdk/*"]
+      "@lernender/cdk/*": ["../../dist/packages/cdk/*"]
     },
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2015", "dom", "es2016.array.include"]
   },
   "files": [
     "public-api.ts",
@@ -25,8 +23,6 @@
     "flatModuleOutFile": "index.js",
     "flatModuleId": "@lernender/cdk",
     "skipTemplateCodegen": true,
-    "fullTemplateTypeCheck": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "fullTemplateTypeCheck": true
   }
 }

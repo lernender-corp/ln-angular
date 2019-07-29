@@ -5,9 +5,11 @@
     "outDir": "../../dist/packages/common",
     "rootDir": ".",
     "rootDirs": [
+      ".",
       "../../dist/packages/common"
     ],
     "paths": {
+      "@lernender/cdk": ["../../dist/packages/cdk/*"],
       "@lernender/cdk/*": ["../../dist/packages/cdk/*"],
       "@lernender/common/*": ["*", "../../dist/packages/common/*"]
     }

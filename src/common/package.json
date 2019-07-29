@@ -8,6 +8,10 @@
   "typings": "./common.d.ts",
   "files": ["*"],
   "keywords": [
+    "angular",
+    "material",
+    "material design",
+    "components"
   ],
   "license": "MIT",
   "peerDependencies": {
@@ -19,12 +23,15 @@
   },
   "dependencies": {
     "tslib": "^1.7.1",
-    "@lernender/core": "^1.0.69"
+    "@lernender/core": "^1.0.70",
+    "@lernender/common": "^1.0.0",
+    "@lernender/cdk": "^1.0.0"
   },
   "schematics": "./schematics/collection.json",
   "ng-update": {
     "migrations": "./schematics/migration.json",
     "packageGroup": [
+      "@lernender/cdk",
       "@lernender/common"
     ]
   },

@@ -15,6 +15,7 @@ commonPackage.sourceDir = join(buildConfig.packagesDir, 'common');
 
 /** List of all build packages defined for this project. */
 export const allBuildPackages = [
-  cdkPackage
+  cdkPackage,
+  commonPackage
 ];
 
