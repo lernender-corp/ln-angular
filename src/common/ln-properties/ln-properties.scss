@@ -1,0 +1,62 @@
+@import 'index';
+
+:host {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.ln-properties {
+  @include font-size();
+  box-shadow: $box-shadow;
+
+  .attribute-grid table {
+    @include font-family();
+    @include font-size(18px);
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+  }
+  .attribute-grid {
+    @include radius();
+    background: $white;
+    overflow: hidden;
+    border: 1px solid $grey-908;
+  }
+  .attribute-grid table td, .attribute-grid table th {
+    padding: 10px;
+
+    &.required {
+      color: $brand-color;
+    }
+  }
+  .attribute-grid table thead th {
+    background-color: $brand-color;
+    color: $white;
+    border-left: 1px solid rgba(0,0,0,.01);
+  }
+  .attribute-grid table thead th:first-child {
+    border: none;
+  }
+  .attribute-grid table tbody td {
+    color: $grey-908;
+    border-left: 1px solid rgba(0,0,0,.03);
+
+    &.required {
+      color: $brand-color;
+    }
+
+  }
+  .attribute-grid table tbody .alt td {
+    background: #EBEBEB;
+    color: $grey-908;
+  }
+  .attribute-grid table tbody td:first-child {
+    border-left: none;
+  }
+  .attribute-grid table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+}

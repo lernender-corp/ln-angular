@@ -1,0 +1,111 @@
+@import 'index';
+
+.ln-textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  margin: 0;
+
+  .disabled {
+    @include disabled();
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  label.ln-label {
+    @include label();
+    display: block;
+    padding: 4px;
+    &.hidden {
+      display: none;
+    }
+
+    span {
+      &.ln-label-description {
+        padding: 0 4px;
+      }
+
+      &.error-description {
+        color: rgba(27,37,50,0.6);
+      }
+
+      &.error {
+        color: $brand-color;
+      }
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+
+  textarea.ln-textarea-control {
+    box-sizing : border-box;
+    display: block;
+    margin: 0;
+    padding: 4px;
+    width: 100%;
+    background-color: $white;
+    color: #B8BEC6;
+    cursor: default;
+    // -webkit-box-shadow: 0 0 1px 0 rgba(27,37,50,0.08);
+    // box-shadow: 0 0 1px 0 rgba(27,37,50,0.08);
+    border: 1px solid rgba(27,37,50,0.08);
+    border-radius:4px;
+
+    &:not(.data) {
+      color: #B8BEC6;
+      /// background-color: $white;
+
+      &::placeholder {
+        @include label();
+        color: $gray-600;
+        font-weight: normal;
+      }
+
+      &:hover, &:active, &:focus {
+        outline: none;
+        -webkit-box-shadow: 0 0 1px 0 #007AEC, 0 0 8px 0 rgba(0,122,236,0.4);
+        // background-color: #FFFFFF;
+        box-shadow: 0 0 1px 0 #007AEC, 0 0 8px 0 rgba(0,122,236,0.4);
+        color: rgba(27,37,50, .6);
+      }
+    }
+
+    &.data {
+      color:rgba(27,37,50,.6);
+
+      &:hover {
+        color: rgba(27,37,50, .6);
+        // background-color: #E6E9EE;
+      }
+
+      &:hover, &:active, &:focus {
+        outline: none;
+        border: 1px solid rgba(27,37,50,0.08);
+        -webkit-box-shadow: 0 0 1px 0 #007aec, 0 0 8px 0 #007aec;
+        background-color: white;
+        box-shadow: 0 0 1px 0 #007AEC, 0 0 8px 0 rgba(0,122,236,0.4);
+      }
+
+      &:active {
+        color: inherit;
+      }
+
+      &.error {
+        outline: none;
+        box-shadow: none;
+        background-color: $input-error-background;
+        color: $brand-color;
+        border: 1px solid $brand-color;
+      }
+    }
+
+    &.disabled {
+      @include disabled();
+    }
+  }
+}
+

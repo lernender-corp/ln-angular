@@ -1,0 +1,44 @@
+@import 'index';
+
+.ln-dynamic-card {
+	@include font-size();
+	@include radius(6px);
+	width: 100%;
+	height: 100%;
+	background-color: $white;
+	box-shadow: $box-shadow;
+
+	&.disabled {
+		@include disabled();
+	}
+
+	&.animate {
+		transition: all .5s ease-in-out;
+		&:hover {
+			transform: scale(1.025);
+		}
+	}
+
+	.ln-dynamic-card-actions {
+		a.ln-dynamic-card-action {
+			@include font-size();
+			height: 20px;
+			letter-spacing: 0.65px;
+			line-height: 20px;
+			color: $brand-600;
+			text-transform: uppercase;
+			text-decoration: none;
+			cursor: default;
+			padding: 0 15px;
+
+			&:hover {
+				text-decoration: none;
+			}
+
+			&:visited {
+				text-decoration: none;
+			}
+		}
+	}
+
+}

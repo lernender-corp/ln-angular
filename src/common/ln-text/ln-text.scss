@@ -1,0 +1,21 @@
+@import 'index';
+
+.ln-text {
+  background-color: transparent;
+  box-sizing: border-box;
+  color: $grey-908;
+  height: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: inherit;
+
+  &.disabled {
+    @include disabled();
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+}

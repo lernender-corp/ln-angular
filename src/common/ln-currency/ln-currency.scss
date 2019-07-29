@@ -1,0 +1,31 @@
+@import 'index';
+
+.ln-currency {
+  @include font-size();
+  @include label();
+  color: inherit;
+  margin: 0px;
+
+  &.disabled {
+    @include disabled();
+  }
+
+  &.hidden {
+    display: none;
+
+  }
+
+  &.align-left {
+    text-align: left;
+  }
+
+  &.align-center {
+    text-align: center;
+  }
+
+  &.align-right {
+    text-align: right;
+  }
+
+}
+

@@ -1,0 +1,18 @@
+@import 'index';
+
+.ln-date {
+	@include font-size();
+	background-color: transparent;
+	cursor: default;
+	margin: 0;
+	padding: 0 5px;
+
+	&.disabled {
+		@include disabled();
+	}
+
+	.ln-date-container {
+	}
+}
+
+

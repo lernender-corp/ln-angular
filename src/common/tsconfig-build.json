@@ -1,0 +1,27 @@
+{
+  "extends": "../bazel-tsconfig-build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../dist/packages/common",
+    "rootDir": ".",
+    "rootDirs": [
+      "../../dist/packages/common"
+    ],
+    "paths": {
+      "@lernender/cdk/*": ["../../dist/packages/cdk/*"],
+      "@lernender/common/*": ["*", "../../dist/packages/common/*"]
+    }
+  },
+  "files": [
+    "public-api.ts",
+    "typings.d.ts"
+  ],
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "flatModuleOutFile": "index.js",
+    "flatModuleId": "@lernender/common",
+    "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true
+  }
+}

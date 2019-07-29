@@ -1,38 +1,38 @@
+// TypeScript config file that matches all source files in the project. This file is read by
+// IDEs and TSLint. For IDEs it ensures that `experimentalDecorator` warnings are not showing up.
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
+    "outDir": "./dist/packages/all",
     "experimentalDecorators": true,
-    "module": "esnext",
+    "module": "es2015",
     "moduleResolution": "node",
-    "importHelpers": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": false,
+    "strictFunctionTypes": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "skipLibCheck": true,
     "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "paths": {
-      "lib": [
-        "dist/lib"
-      ],
-      "lib/*": [
-        "dist/lib/*"
-      ],
-      "@lernender/core": [
-        "./node_modules/@lernender/core"
-      ]
-    }
+    "lib": ["es5", "es2015", "dom"],
+    "types": ["jasmine"]
   },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
+  "include": [
+    "src/**/*.ts",
+    "e2e/**/*.ts",
+    "test/**/*.ts",
+    "tools/**/*.ts"
+  ],
+  "exclude": [
+    // Exclude files that depend on Node APIs because those depend on the Node types and therefore
+    // cause ambiguous imports. For example `setTimeout()` will return a Timer instead of a number.
+    "./src/universal-app/prerender.ts",
+
+    // Exclude the API goldens in order to not slow-down IDE's using this tsconfig file
+    "tools/public_api_guard/**/*.d.ts",
+
+    // IDEs should not type-check the different node_modules directories of the different packages.
+    // This would cause the IDEs to be slower and also linters would check the node_modules.
+    "node_modules/"
+  ]
 }

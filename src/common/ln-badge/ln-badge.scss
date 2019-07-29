@@ -1,0 +1,17 @@
+@import 'index';
+
+.ln-badge {
+  @include font-size();
+
+  &.disabled {
+    @include disabled();
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  .ln-badge-value {
+    @include user-select();
+  }
+}
