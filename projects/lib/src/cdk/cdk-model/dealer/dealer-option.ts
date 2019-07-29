@@ -1,5 +1,4 @@
 import { Library, Image, Action } from '@lernender/core';
-import { MarketingSeries } from '../common/market-series';
 import { Attribute } from '../common/attribute';
 
 export class DealerOption extends Action {
@@ -7,7 +6,6 @@ export class DealerOption extends Action {
   public partNbr: string;
   public marketingName: string;
   public disclaimer: string;
-  public marketingSeries: MarketingSeries[];
   public category: string;
   public msrp: number;
   public dealerInvoice: number;
@@ -35,17 +33,10 @@ export class DealerOption extends Action {
     this.partNbr = Library.init(options, 'partNbr');
     this.marketingName = Library.init(options, 'marketingName');
     this.disclaimer = Library.init(options, 'disclaimer');
-    this.marketingSeries = Library.init(options, 'marketingSeries', []);
     this.category = Library.init(options, 'category');
     this.msrp = Library.init(options, 'msrp', 0);
     this.dealerInvoice = Library.init(options, 'dealerInvoice', 0);
     this.retailPrice = Library.init(options, 'retailPrice', 0);
-    this.marketingSeries = [];
-    if (Library.hasOwnProperty(options, 'marketingSeries')) {
-      this.marketingSeries = options.marketingSeries.map(
-        o => new MarketingSeries(o)
-      );
-    }
     this.toyotaStandard = Library.init(options, 'toyotaStandard', true);
     this.thumbNailImgPath = Library.init(options, 'thumbNailImgPath');
     this.detailImgPath = Library.init(options, 'detailImgPath');
