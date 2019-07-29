@@ -9,19 +9,17 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { AuthenticationConfig } from './authentication/authentication-config';
 import { Carousel } from './common/carousel';
 import { CdkDataSource } from './generic/datasource';
-import { Color } from './vehicle/color';
 import { Container } from './generic/container';
 import { Engine } from './vehicle/engine';
 import { Environment } from './common/environment';
-import { ExteriorColor } from './vehicle/exteriorColor';
+
 import { FilterMessage } from './filter/filter-message';
 import { Flags } from './vehicle/flags';
 import { Grid } from './tabular/grid';
-import { InteriorColor } from './vehicle/interiorColor';
+
 import { MPG } from './vehicle/mpg';
 import { Media } from './vehicle/media';
 import { Model } from './vehicle/model';
-
 import { Node } from './common/node';
 import { Option } from './vehicle/option';
 import { PageScrollInstance } from './page-scroll/page-scroll-instance';
@@ -42,15 +40,14 @@ const CDK_MODELS = [
   AuthenticationConfig,
   Carousel,
   CdkDataSource,
-  Color,
   Container,
   Engine,
   Environment,
-  ExteriorColor,
+
   FilterMessage,
   Flags,
   Grid,
-  InteriorColor,
+
   MPG,
   Media,
   Model,

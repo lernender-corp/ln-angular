@@ -12,7 +12,6 @@ export * from './ln-banner';
 export * from './ln-carousel-item';
 export * from './ln-carousel';
 export * from './ln-checkbox';
-export * from './ln-color-swatch';
 export * from './ln-dropdown';
 export * from './ln-list';
 export * from './ln-modal-dialog';

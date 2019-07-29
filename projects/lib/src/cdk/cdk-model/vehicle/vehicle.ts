@@ -1,8 +1,6 @@
 import { ChangeIndicator } from './change-indicator';
 import { Library, Simple } from '@lernender/core';
 import { Engine } from './engine';
-import { ExteriorColor } from './exteriorColor';
-import { InteriorColor } from './interiorColor';
 import { Media } from './media';
 import { Model } from './model';
 import { MPG } from './mpg';
@@ -98,11 +96,9 @@ export class Vehicle extends Simple {
   public dio: object;
   public disclaimer: string[];
   public engine: Engine;
-  public extColor: ExteriorColor;
   public flags: Flags;
   public grade?: string;
   public holdStatus: string;
-  public intColor: InteriorColor;
   public invoiceDate?: Date;
   public lastOfflineDate?: Date;
   public lastPromotedDate?: Date;
@@ -165,10 +161,8 @@ export class Vehicle extends Simple {
       ? options.disclaimer
       : [];
     this.engine = new Engine(Library.init(options, 'engine', {}));
-    this.extColor = new ExteriorColor(Library.init(options, 'extColor', {}));
     this.flags = new Flags(Library.init(options, 'flags', {}));
-     this.grade = Library.init(options, 'grade', '');
-    this.intColor = new InteriorColor(Library.init(options, 'intColor', {}));
+    this.grade = Library.init(options, 'grade', '');
     this.invoiceDate = Library.init(options, 'invoiceDate');
     if (!Library.isUndefined(this.invoiceDate)) {
       this.invoiceDate = new Date(this.invoiceDate);

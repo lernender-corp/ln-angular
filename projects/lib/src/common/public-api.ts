@@ -10,7 +10,6 @@ export * from './ln-button';
 export * from './ln-card';
 export * from './ln-chip';
 export * from './ln-chip-panel';
-export * from './ln-color';
 export * from './ln-container';
 export * from './ln-currency';
 export * from './ln-date';
