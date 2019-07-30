@@ -1,0 +1,67 @@
+@import 'index';
+
+.ln-list {
+  box-shadow: 1px 1px 5px 0px $gray-501;
+  ul.ln-list-items {
+    @include radius(4px);
+    @include flexbox();
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    height: 150px;
+    //background-color: $brand-color;
+    color: $black;
+    padding: 4px;
+    overflow: auto;
+    display: block;
+
+    li.ln-list-item {
+      @include flex(0 1 30px);
+      height: 35px;
+      line-height: 35px;
+      cursor: default;
+      border-bottom: 1px solid $gray-501;
+      padding-left: 5px;
+
+      .ln-list-item-inner {
+        @include make-row();
+        @include justify-content(center);
+        @include flex-wrap(nowrap);
+        height: 100%;
+        line-height: 25px;
+        margin: 0;
+        padding-right: 5px;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+        width: auto;
+
+        .ln-list-item-icon {
+          @include flex(0 0 25px);
+
+          &.right {
+            height: auto;
+            order: 2;
+            padding-right: 0;
+            padding-left: 5px;
+          }
+        }
+
+        .ln-list-item-label {
+          @include flex(1 1 100%);
+          @include user-select();
+          cursor: default;
+
+          &.left {
+            order: 1;
+            padding-left: 0;
+            padding-right: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+
+    }
+  }
+}

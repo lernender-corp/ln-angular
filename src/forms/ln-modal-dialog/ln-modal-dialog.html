@@ -1,0 +1,25 @@
+<div class="ln-modal-dialog"
+  [ngClass]="{'overlay': !removeOverlay}"
+  (click)="Close()"
+>
+  <div class="ln-modal-dialog-container" [ngStyle]="style"  cdkScrollBar (click)="handleContainer($event)">
+    <div class="ln-modal-dialog-icon" (click)="Close()" *ngIf="!close?.hidden" >
+      <ln-icon [name]="'close'" (onClick)="Close()"></ln-icon>
+    </div>
+    <ng-container *ngIf="template else defaultTemplate">
+      <ng-container *ngTemplateOutlet="template; context:{data:data}"></ng-container>
+    </ng-container>
+    <ng-template #defaultTemplate>
+      <ng-content></ng-content>
+    </ng-template>
+    <div class="ln-modal-dialog-body-action-container" *ngIf="actions?.length > 0">
+      <ul class="ln-modal-dialog-body-action-container-action-items">
+        <li class="ln-modal-dialog-body-action-container-action-item" *ngFor="let action of actions">
+          <ln-button [disabled]="action.disabled" [hidden]="action.disabled" (onClick)="OnAction(action)">
+            {{action.name}}
+          </ln-button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

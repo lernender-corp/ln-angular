@@ -1,0 +1,55 @@
+@import 'index';
+
+.ln-label {
+  @include font-size();
+  @include flexbox();
+  @include flex-direction(row);
+  @include justify-content(center);
+  @include align-items(flex-start);
+  @include label();
+  width: 100%;
+
+  &:hover {
+    color: $brand-color;
+  }
+  &.disabled {
+    @include disabled();
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  .ln-label-description {
+    @include flex(1 1 100%);
+    white-space: nowrap;
+    max-width: 200px;
+    min-width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.ln-label.normal {
+    width: 49.64px;
+}
+
+.ln-label.hover {
+    width: 87.45px;
+    color: $brand-color !important;
+}
+
+.ln-label.inputed {
+    width: 53.18px;
+    &:hover {
+      color: $gray-900;
+    }
+}
+
+.ln-label.disabled {
+    width: 60.27px;
+}
+
+.ln-label.error {
+    width: 34.27px;
+    color: $brand-color !important;
+}

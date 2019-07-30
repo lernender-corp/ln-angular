@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig-build",
+  "files": [
+    "public-api.ts",
+    "../typings.d.ts"
+  ],
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "emitDecoratorMetadata": true,
+    "strictMetadataEmit": true,
+    "flatModuleOutFile": "index.js",
+    "flatModuleId": "@lernender/forms/ln-modal-dialog",
+    "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true
+  }
+}

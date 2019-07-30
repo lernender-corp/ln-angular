@@ -1,0 +1,86 @@
+<div
+  class="ln-section"
+  [ngStyle]="style"
+  [class.hidden]="hidden"
+  [class.disabled]="disabled"
+  [class.small]="small"
+  [class.border-top]="borderTop"
+  [id]="uid"
+>
+  <div
+    class="ln-section-banner"
+    [ngStyle]="headerStyle"
+    [class.active]="active"
+  >
+    <!-- * CUSTOM BANNER TEMPLATE -->
+    <ng-container *ngIf="template; else default">
+      <ng-container *ngTemplateOutlet="template"></ng-container>
+    </ng-container>
+    <!-- * DEFAULT BANNER TEMPLATE -->
+    <ng-template #default>
+      <!-- * BANNER CONTENT -->
+      <div
+        (click)="OnClick($event)"
+        class="ln-section-banner-inner"
+        [class.right-icon]="iconRight"
+      >
+        <!-- * ICON -->
+        <div
+          class="ln-section-banner-icon-container"
+          [class.right-icon]="iconRight"
+        >
+          <ln-icon
+            class="ln-section-banner-icon"
+            [name]="icon"
+            [hidden]="active && hiddenIconOnExpand"
+          ></ln-icon>
+        </div>
+        <!-- * BANNER LABEL -->
+        <div class="ln-section-banner-inner-text">
+          <div
+            class="ln-section-banner-inner-text_label"
+            [innerHTML]="label"
+          ></div>
+          <p *ngIf="description">{{ description }}</p>
+        </div>
+      </div>
+      <!-- * BANNER ACTIONS -->
+      <div class="ln-section-content-action" [hidden]="actions?.length === 0">
+        <ul class="ln-section-content-action-items">
+          <li
+            class="ln-section-content-action-item"
+            *ngFor="let action of actions"
+          >
+            <ln-button
+              *ngIf="!action.hasIcon()"
+              class="btn-primary btn-small"
+              [disabled]="action.disabled"
+              [hidden]="action.disabled"
+              (onClick)="action.onClick($event, action)"
+            >
+              {{ action.name }}
+            </ln-button>
+            <ln-icon
+              *ngIf="action.hasIcon()"
+              [name]="action.name"
+              [disabled]="action.disabled"
+              [hidden]="action.disabled"
+              (onClick)="action.onClick($event, action)"
+            >
+            </ln-icon>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
+  </div>
+  <!-- * SECTION CONTENT -->
+  <div
+    class="ln-section-content"
+    [class.active]="active"
+    [class.right-icon]="iconRight"
+    [class.hidden]="bypassNoDataMessage"
+    [ngStyle]="contentStyle"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

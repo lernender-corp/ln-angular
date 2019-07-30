@@ -1,0 +1,121 @@
+@import 'index';
+
+$time: 0.3s;
+
+:host {
+  margin: 0;
+  padding: 0;
+}
+
+.ln-accordion {
+
+  border-radius: inherit;
+  &.active {
+    background-color: $gray-400;
+  }
+  .ln-accordion-header {
+    @include make-row();
+    @include flex-wrap(nowrap);
+    position: relative;
+    border-bottom: 0;
+    padding: 6px 10px 6px 0;
+    color: $gray-900;
+    cursor: pointer;
+    .arrow-icon-visibility {
+      visibility: hidden;
+    }
+    &.ln-accordion-header-right {
+      padding-left: 20px;
+    }
+
+    &.show-checked-header {
+      padding-left: 20px;
+      &:hover {
+        color: $brand-color;
+        background-color: rgba(27, 37, 50, 0.04);
+        .arrow-icon-visibility {
+          visibility: visible;
+        }
+      }
+    }
+
+
+    &.active {
+      background-color: $gray-400;
+    }
+
+    .ln-accordion-header-icon-left {
+      width:40px;
+      text-align: center;
+      &:hover {
+        visibility: visible;
+      }
+      &.showCarat {
+        visibility: visible;
+      }
+      &.hideCarat {
+        visibility: hidden;
+      }
+    }
+
+    .ln-accordion-header-icon-left-checked {
+      &:hover {
+        display: block;
+      }
+      &.showCarat {
+        display: block;
+      }
+      &.hideCarat {
+        display: none;
+      }
+    }
+
+    .ln-accordion-header-left {
+      &.active {
+        text-align: center;
+      }
+    }
+
+    .ln-accordion-header-icon-right {
+      color: $grey-908;
+      position: absolute;
+      right: 12px;
+    }
+  }
+
+  .ln-accordion-section {
+    overflow: hidden;
+    opacity: 0;
+    height: 0;
+
+    border: 0;
+    transition: opacity .8s ease;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    &.active {
+      opacity: 1;
+      height: auto;
+    }
+
+    &.show-checked-section {
+      padding-left: 20px;
+      &.active {
+        background-color: $gray-400;
+        padding-bottom: 4px;
+      }
+    }
+
+    &.show-right-section {
+      padding-left: 20px;
+    }
+
+    .ln-accordion-section-inner {
+      padding: 0;
+
+      &.format-inner {
+        padding-left: 40px;
+      }
+    }
+  }
+}

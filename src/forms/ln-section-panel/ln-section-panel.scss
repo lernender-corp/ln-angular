@@ -1,0 +1,106 @@
+@import 'index';
+
+:host {
+  height: 100%;
+}
+
+.ln-section-panel {
+  @include font-size();
+  @include make-row();
+  @include flex-wrap(nowrap);
+  padding: 0;
+  border: 1px solid $grey-604;
+  height: 100%;
+  &.disabled {
+    @include disabled();
+  }
+
+  &.hidden {
+    display: none;
+
+  }
+
+  &.in-transition {
+    transition: transform 900ms ease;
+  }
+
+  .ln-section-panel-nav {
+    @include flex(1 1 300px);
+    background-color: #fafafa;
+    cursor: default;
+    height: 100%;
+    .ln-section-panel-nav-inner {
+      @include make-column();
+      @include flex-wrap(nowrap);
+      background-color: #fafafa;
+      color: $grey-908;
+      padding: 0;
+      height: auto;
+      cursor: default;
+
+      .ln-section-panel-nav-items {
+        @include flex(1 1 100%);
+        height: auto;
+        min-height: 350px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0;
+
+        .ln-section-panel-nav-label {
+          @include font-family();
+          @include font-size();
+          @include user-select();
+          color: $grey-908;
+          height: 50px;
+          line-height: 50px;
+          margin: 0;
+          padding: 0 10px;
+          text-transform: capitalize;
+          background-color: $grey-602;
+          border-bottom: 1px solid $grey-603;
+        }
+
+        .ln-section-panel-nav-item {
+          @include font-size();
+          @include user-select();
+          height: 50px;
+          line-height: 50px;
+          width: 100%;
+          border-left: 3px solid transparent;
+          cursor: pointer;
+
+          &.hidden {
+            display: none;
+          }
+
+          &:hover {
+            background-color: $grey-602;
+          }
+
+          &.active {
+            border-left: 3px solid $brand-color;
+            background-color: $grey-602;
+          }
+
+          .ln-section-panel-nav-item-inner {
+            padding: 0 10px;
+
+            a {
+              text-transform: capitalize;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ln-section-panel-content {
+    @include flex(1 1 100%);
+    @include align-items(stretch);
+    border-left: 1px solid $grey-604;
+    background-color: $white;
+    height: 100%;
+    overflow-y: auto;
+  }
+}

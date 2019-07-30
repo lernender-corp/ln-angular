@@ -1,0 +1,14 @@
+<div
+  class="ln-checkbox"
+  [ngStyle]="style"
+  [class.visibility]="!visibility"
+  [class.disabled]="disabled">
+  <ul class="ln-checkbox-items" [ngStyle]="style">
+    <li class="ln-checkbox-icon">
+      <ln-icon [name]="getName()" (onClick)="handleClick($event)" [padRight]="label?.length > 0"></ln-icon>
+    </li>
+    <li class="ln-checkbox-label" [hidden]="label?.length === 0">
+      {{ label }}
+    </li>
+  </ul>
+</div>

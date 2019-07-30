@@ -53,7 +53,8 @@ export const rollupGlobals = {
   '@angular/cdk/stepper': 'ng.cdk.stepper',
   '@angular/cdk/collections': 'ng.cdk.collections',
   '@angular/cdk/scrolling': 'ng.cdk.scrolling',
-  '@angular/material': 'ng.material',
+  '@angular/cdk/drag-drop': 'ng.cdk.drag-drop',
+
   // Some packages are not really needed for the UMD bundles, but for the missingRollupGlobals rule.
   '@lernender/core': '@lernender/core/index',
   ...rollupCdkEntryPoints,
