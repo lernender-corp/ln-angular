@@ -1,9 +1,9 @@
 /**
  * @license
- * Copyright Toyota LLC All Rights Reserved.
+ * Copyright Lernender LLC All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://toyota.io/license
+ * found in the LICENSE file at https://lernender.io/license
  */
 export * from '@lernender/common/ln-badge';
 export * from '@lernender/common/ln-button';

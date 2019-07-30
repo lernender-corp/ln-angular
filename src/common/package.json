@@ -1,7 +1,7 @@
 {
   "name": "@lernender/common",
   "version": "0.0.0-PLACEHOLDER",
-  "description": "Toyota Angular Common Components",
+  "description": "Lernender Angular Common Components",
   "main": "./bundles/common.umd.js",
   "module": "./esm5/common.es5.js",
   "es2015": "./esm2015/common.js",

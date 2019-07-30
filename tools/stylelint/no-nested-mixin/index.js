@@ -1,6 +1,6 @@
 const stylelint = require('stylelint');
 
-const ruleName = 'toyota/no-nested-mixin';
+const ruleName = 'lernender/no-nested-mixin';
 const messages = stylelint.utils.ruleMessages(ruleName, {
   expected: () => 'Nested mixins are not allowed.',
 });

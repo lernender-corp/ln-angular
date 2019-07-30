@@ -33,7 +33,7 @@ export class LnIcon implements OnChanges{
   public classNameArr: string[];
 
   constructor() {
-    this.type = 'toyota-icon';
+    this.type = 'lernender-icon';
     this.active = false;
     this.name = '';
     this.color = '';

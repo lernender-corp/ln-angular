@@ -3,7 +3,7 @@ const NeedsPrefix = require('./needs-prefix');
 const parseSelector = require('stylelint/lib/utils/parseSelector');
 const minimatch = require('minimatch');
 
-const ruleName = 'toyota/no-prefixes';
+const ruleName = 'lernender/no-prefixes';
 const messages =  stylelint.utils.ruleMessages(ruleName, {
   property: property => `Unprefixed property "${property}".`,
   value: (property, value) => `Unprefixed value in "${property}: ${value}".`,

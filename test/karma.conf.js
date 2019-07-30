@@ -97,7 +97,7 @@ module.exports = (config) => {
     const instanceIndex = Number(process.env['CIRCLE_NODE_INDEX']);
     const maxParallelInstances = Number(process.env['CIRCLE_NODE_TOTAL']);
     const tunnelIdentifier = `${process.env['CIRCLE_BUILD_NUM']}-${instanceIndex}`;
-    const buildIdentifier = `toyota-angular-${tunnelIdentifier}`;
+    const buildIdentifier = `lernender-${tunnelIdentifier}`;
     const testPlatform = process.env['TEST_PLATFORM'];
 
     if (testPlatform === 'browserstack') {

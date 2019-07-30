@@ -1,9 +1,9 @@
 /**
  * @license
- * Copyright toyota LLC All Rights Reserved.
+ * Copyright lernender LLC All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://toyota.io/license
+ * found in the LICENSE file at https://lernender.io/license
  */
 export * from './ln-date';
 export * from './ln-date.module';

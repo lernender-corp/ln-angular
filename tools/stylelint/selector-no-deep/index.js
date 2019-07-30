@@ -2,7 +2,7 @@ const stylelint = require('stylelint');
 const isStandardSyntaxRule = require('stylelint/lib/utils/isStandardSyntaxRule');
 const isStandardSyntaxSelector = require('stylelint/lib/utils/isStandardSyntaxSelector');
 
-const ruleName = 'toyota/selector-no-deep';
+const ruleName = 'lernender/selector-no-deep';
 const messages = stylelint.utils.ruleMessages(ruleName, {
   expected: selector => `Usage of the /deep/ in "${selector}" is not allowed`,
 });

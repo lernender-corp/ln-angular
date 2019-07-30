@@ -39,7 +39,7 @@
 
     &.toggle-on::after {
       left: 50%;
-      font-family: toyota-icon!important;
+      font-family: lernender-icon!important;
       font-size: 20px;
       color: $white;
       content: '\f058';
@@ -52,14 +52,14 @@
     }
 
     &.toggle-on::before {
-      font-family: toyota-icon!important;
+      font-family: lernender-icon!important;
       content: attr(before-content);
       color: $white;
       font-size: 12px;
     }
 
     &.toggle-off::after {
-      font-family: toyota-icon!important;
+      font-family: lernender-icon!important;
       font-size: 12px;
       content: attr(after-content);
       color: $white;
@@ -79,7 +79,7 @@
   }
 
   .toggle-btn::before {
-    font-family: toyota-icon!important;
+    font-family: lernender-icon!important;
     font-size: 20px;
     color: $white;
     left: 0;

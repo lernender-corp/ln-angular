@@ -1,6 +1,6 @@
 const stylelint = require('stylelint');
 const path = require('path');
-const ruleName = 'toyota/no-concrete-rules';
+const ruleName = 'lernender/no-concrete-rules';
 const messages = stylelint.utils.ruleMessages(ruleName, {
   expected: pattern => `CSS rules must be placed inside a mixin for files matching '${pattern}'.`
 });
