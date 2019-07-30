@@ -1,0 +1,28 @@
+<div class="ln-banner"
+     [ngStyle]="style"
+     [class.hidden]="hidden"
+     [class.disabled]="disabled">
+  <div class="ln-banner-content" [class.active]="active">
+    <div class="ln-banner-content-label">
+      <h3 [attr.for]="uid"
+          [hidden]="!hasLabel()"
+          [class.disabled]="disabled">{{label}}</h3>
+    </div>
+    <p *ngIf="hasDescription()">{{description}}</p>
+    <ng-container *ngIf="template else default">
+      <ng-container *ngTemplateOutlet="template"></ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #default>
+  <div class="ln-banner-content-action" [hidden]="actions?.length === 0">
+    <ul class="ln-banner-content-action-items">
+      <li class="ln-banner-content-action-item" *ngFor="let action of actions">
+        <ln-button [disabled]="action.disabled" [hidden]="action.disabled" (onClick)="action.onClick($event)">
+          {{action.name}}
+        </ln-button>
+      </li>
+    </ul>
+  </div>
+</ng-template>

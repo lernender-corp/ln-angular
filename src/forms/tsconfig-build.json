@@ -1,0 +1,30 @@
+{
+  "extends": "../bazel-tsconfig-build.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../dist/packages/forms",
+    "rootDir": ".",
+    "rootDirs": [
+      ".",
+      "../../dist/packages/common",
+      "../../dist/packages/forms"
+    ],
+    "paths": {
+      "@lernender/cdk/*": ["../../dist/packages/cdk/*"],
+      "@lernender/common/*": ["../../dist/packages/common/*"],
+      "@lernender/forms/*": ["*", "../../dist/packages/forms/*"]
+    }
+  },
+  "files": [
+    "public-api.ts",
+    "typings.d.ts"
+  ],
+  "angularCompilerOptions": {
+    "annotateForClosureCompiler": true,
+    "strictMetadataEmit": true,
+    "flatModuleOutFile": "index.js",
+    "flatModuleId": "@lernender/forms",
+    "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": true
+  }
+}

@@ -19,10 +19,12 @@ function generateRollupEntryPoints(packageName: string, entryPoints: string[]):
 /** List of potential secondary entry-points for the cdk package. */
 const cdkSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDir, 'cdk'));
 const commonSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDir, 'common'));
+const commonFormsEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDir, 'forms'));
 
 /** Object with all cdk entry points in the format of Rollup globals. */
 const rollupCdkEntryPoints = generateRollupEntryPoints('cdk', cdkSecondaryEntryPoints);
 const rollupCommonEntryPoints = generateRollupEntryPoints('common', commonSecondaryEntryPoints);
+const rollupFormsEntryPoints = generateRollupEntryPoints('forms', commonFormsEntryPoints);
 
 /** Map of globals that are used inside of the different packages. */
 export const rollupGlobals = {
@@ -56,6 +58,7 @@ export const rollupGlobals = {
   '@lernender/core': '@lernender/core/index',
   ...rollupCdkEntryPoints,
   ...rollupCommonEntryPoints,
+  ...rollupFormsEntryPoints,
   'lodash-es': 'lodash-es/index',
   'rxjs': 'rxjs',
   'rxjs/operators': 'rxjs.operators'

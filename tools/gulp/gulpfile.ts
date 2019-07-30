@@ -1,10 +1,11 @@
 import {task} from 'gulp';
 import {createPackageBuildTasks, sequenceTask} from 'lernender-angular-build-tools';
 
-import { allBuildPackages, cdkPackage, commonPackage } from './packages';
+import { allBuildPackages, cdkPackage, commonPackage, formsPackage } from './packages';
 
 createPackageBuildTasks(cdkPackage);
 createPackageBuildTasks(commonPackage);
+createPackageBuildTasks(formsPackage);
 
 import './tasks/aot';
 import './tasks/clean';
