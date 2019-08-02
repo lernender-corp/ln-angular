@@ -1,0 +1,30 @@
+<div
+  class="ln-grid-image"
+  [ngClass]="{
+    'no-image': !model.icon?.exists
+  }"
+>
+  <div
+  class="ln-grid-image-img-container"
+  >
+    <img
+      class="ln-grid-image-img"
+      [ngClass]="{
+        'no-image': !model.icon?.exists
+      }"
+      [attr.alt]="model.tooltip"
+      [src]="model.icon?.url"
+      [attr.height]="model.icon['style']['height']"
+      [attr.width]="model.icon['style']['width']"
+      [ngStyle]="model.icon['style']"
+      (click)="model.icon?.onClick($event)"
+    />
+  </div>
+  <div
+    class="ln-grid-image-label-container"
+    [hidden]="model?.label?.length === 0"
+    [ngClass]="model?.labelClassList"
+  >
+    <ln-html [value]="model?.label"></ln-html>
+  </div>
+</div>

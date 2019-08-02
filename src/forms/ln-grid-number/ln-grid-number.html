@@ -1,0 +1,15 @@
+<div
+  class="ln-grid-number"
+  [ngClass]="{
+    'align-left' : model?.align === 'left',
+    'align-center' : model?.align === 'center',
+    'align-right' : model?.align === 'right'}">
+  <ln-number
+    [value]="model?.value"
+    [ngClass]="model?.labelClassList"
+    [pattern]="model?.pattern"
+    [disabled]="model?.disabled"
+    [hidden]="model?.hidden"
+    [style]="model?.style">
+  </ln-number>
+</div>

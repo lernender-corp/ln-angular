@@ -1,0 +1,81 @@
+<div
+  class="ln-table-component"
+  [class.hidden]="hidden"
+  [class.disabled]="disabled"
+  [ngStyle]="style"
+>
+  <div class="ln-table-container">
+    <table [attr.id]="table.uid" class="ln-table">
+      <thead [class.hidden]="hideHeader">
+        <tr class="ln-table-header">
+          <th
+            *ngFor="let column of table.columns"
+            (click)="handleHeader(column)"
+            [ngStyle]="column.style"
+            [class.disabled]="disabled"
+            [class.sortable]="!column.sort.disabled"
+            [class.active]="column.sort.active"
+            [class.col-checkbox]="column.component === 'checkbox'"
+          >
+            <span class="ln-table-header-label">
+              {{ column.label }}
+              <span *ngIf="!column.sort.disabled">
+                <span class="sort-markers">
+                  <div class="markers">
+                    <ln-icon
+                      [name]="'arrow-md-dwn'"
+                      [hidden]="
+                        !(column.sort.active && column.sort.isDescending())
+                      "
+                    ></ln-icon>
+                    <ln-icon
+                      [name]="'arrow-md-up'"
+                      [hidden]="
+                        !(column.sort.active && column.sort.isAscending())
+                      "
+                    ></ln-icon>
+                  </div>
+                </span>
+              </span>
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody class="ln-table-body no-data" *ngIf="!table.hasData()">
+        <tr>
+          <td [attr.colspan]="table.columns?.length">
+            {{ schema.noRecordsFound }}
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="ln-table-body has-data" *ngIf="table.hasData()">
+        <tr
+          class="ln-table-row"
+          [class.hidden]="row.hidden"
+          [class.has-content]="row.hasContent()"
+          [class.border-bottom]="!borderless"
+          *ngFor="let row of table.data"
+          id="{{ row.uid }}"
+          (click)="handleRowSelected(row)"
+          (dblclick)="handleDblClick(row)"
+        >
+          <ng-container *ngIf="template && row.hasContent(); else default">
+            <ng-container
+              *ngTemplateOutlet="template; context: { data: row.data }"
+            ></ng-container>
+          </ng-container>
+          <ng-template #default>
+            <td
+              class="ln-table-cell"
+              [class.has-content]="row.hasContent()"
+              *ngFor="let column of table.columns"
+              [ngStyle]="column.style"
+              [width]="column.width"
+              [innerHtml]="row.data[column.field.name]"
+            ></td>
+          </ng-template>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

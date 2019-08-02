@@ -1,0 +1,167 @@
+<div class="ln-grid" [hidden]="hidden" [class.disabled]="disabled">
+  <div class="ln-grid-container">
+    <div class="ln-grid-toolbar">
+      <ln-grid-toolbar
+        [label]="gridSummary.label"
+        [actions]="actions"
+        [all]="allCheckBox"
+        [style]="{ height: schema.toolbarHeight + 'px' }"
+        [toolbarOffset]="actionsOffset"
+      >
+      </ln-grid-toolbar>
+    </div>
+    <cdk-virtual-scroll-viewport
+      cdkScrollBar
+      [itemSize]="schema.rowHeight"
+      class="vertical"
+      [ngStyle]="grid.options.body.style"
+      [class.no-data]="shouldDisplayNoRecordsFound || shouldDisplayNoData"
+    >
+      <section [attr.id]="grid.uid" class="table">
+        <div class="sticky-header" [style.top]="inverseTranslation">
+          <header class="table-header">
+            <ul class="table-header-items">
+              <li
+                class="table-header-item"
+                *ngFor="let column of grid.columns; trackById"
+                (click)="handleHeader(column)"
+                [ngStyle]="column.style"
+                [class.hidden]="column.hidden"
+                [class.sort-enabled]="!column.sort.disabled"
+                [class.resizeable]="schema.enableColResize && column.resizeable"
+              >
+                <span
+                  [class.sort-text]="!column.sort.disabled"
+                  [class.sort-focus]="column.filter.focus"
+                >
+                  {{ column.label }}
+                  <span class="sort-markers" *ngIf="!column.sort.disabled">
+                    <!-- The *ngIf directives need to be present to show/hide the right things based on :hover in CSS -->
+                    <ln-icon
+                      *ngIf="!column.sort.active || column.sort.isDescending()"
+                      [name]="'arrow-md-dwn'"
+                      [hidden]="
+                        !(column.sort.active && column.sort.isDescending())
+                      "
+                    ></ln-icon>
+                    <ln-icon
+                      *ngIf="column.sort.active && column.sort.isAscending()"
+                      [name]="'arrow-md-up'"
+                      [hidden]="
+                        !(column.sort.active && column.sort.isAscending())
+                      "
+                    ></ln-icon>
+                  </span>
+                </span>
+              </li>
+            </ul>
+          </header>
+          <header class="table-filter">
+            <ul
+              class="table-filter-items"
+              [style.height.px]="schema.filterRowHeight"
+            >
+              <li
+                class="table-filter-item"
+                [class.has-filter]="column.filter.enabled"
+                *ngFor="let column of grid.columns; trackById"
+                [ngStyle]="column.header.style"
+                [class.search-icon]="column.cellComponent.type === 'checkbox'"
+                [class.hidden]="column.hidden || column.filter.hidden"
+              >
+                <ln-icon
+                  *ngIf="column.cellComponent.type === 'checkbox'"
+                  [name]="search.name"
+                  (onClick)="_handleClearAllFilter($event)"
+                ></ln-icon>
+                <ln-grid-filter
+                  *ngIf="column.cellComponent.type !== 'checkbox'"
+                  [column]="column"
+                  [bus]="filterMessageBus"
+                ></ln-grid-filter>
+              </li>
+            </ul>
+          </header>
+        </div>
+        <div class="table-body no-data" [class.hidden]="!shouldDisplayNoData">
+          <ng-container *ngIf="noDataTemplate; else noRecordsFoundContent">
+            <ng-container *ngTemplateOutlet="noDataTemplate"></ng-container>
+          </ng-container>
+        </div>
+        <div
+          class="table-body no-data"
+          [class.hidden]="!shouldDisplayNoRecordsFound"
+        >
+          <ng-container
+            *ngIf="noRecordsFoundTemplate; else noRecordsFoundContent"
+          >
+            <ng-container *ngTemplateOutlet="noDataTemplate"></ng-container>
+          </ng-container>
+        </div>
+        <div class="table-body has-data" [class.hidden]="!shouldDisplayRecords">
+          <ng-container>
+            <ul
+              *cdkVirtualFor="let row of grid.rows"
+              class="table-row"
+              [class.hidden]="row.hidden"
+              id="{{ row.uid }}"
+              (click)="handleRowSelected(row)"
+              (dblclick)="handleDblClick(row)"
+              (mouseenter)="handleMouseEnter(row)"
+              (mouseleave)="handleMouseLeave(row)"
+              [class.selected]="row.selected"
+              [style.height.px]="schema.rowHeight"
+            >
+              <li
+                *ngFor="let column of grid.columns; trackById"
+                [ngStyle]="column.style"
+                [class.hidden]="column.hidden"
+                [class.checkbox]="
+                  column.cellComponent.type === 'checkbox' &&
+                  schema.hasRowCheckSelection()
+                "
+                [class.show-only-on-hover]="column.showOnlyOnHover"
+              >
+                <ln-checkbox
+                  *ngIf="
+                    column.cellComponent.type === 'checkbox' &&
+                    schema.hasRowCheckSelection()
+                  "
+                  [(ngModel)]="row.checkbox.checked"
+                  ngDefaultControl
+                  [visibility]="!row.checkbox.hidden"
+                  (onClick)="handleRowChecked(row)"
+                ></ln-checkbox>
+
+                <span
+                  *ngIf="
+                    column.hasCellRender() &&
+                    column.cellComponent.type !== 'checkbox'
+                  "
+                >
+                  {{
+                    column.onCellRender(row.data) || column.defaultDisplay
+                  }}
+                </span>
+                <ln-grid-cell
+                  *ngIf="
+                    !column.hasCellRender() &&
+                    column.cellComponent.type !== 'checkbox'
+                  "
+                  (onEdit)="handleEdit($event)"
+                  [row]="row"
+                  [column]="column"
+                >
+                </ln-grid-cell>
+              </li>
+            </ul>
+          </ng-container>
+        </div>
+      </section>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</div>
+
+<ng-template #noRecordsFoundContent>
+  {{ schema.noRecordsFound }}
+</ng-template>

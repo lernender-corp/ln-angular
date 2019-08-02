@@ -1,0 +1,61 @@
+@import 'index';
+
+:host {
+  @include default-box();
+}
+
+.ln-grid-color {
+  @include make-row();
+  @include flex-wrap(nowrap);
+  text-align: left;
+  padding: 0;
+  width: auto;
+  padding-right: 5px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+  &.no-color {
+    padding: 0;
+    user-select: none;
+  }
+
+  .ln-grid-color-hex {
+    @include flex(0 0 25px);
+
+    .circle {
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display:block;
+
+      &.no-color {
+        border: 1px solid $grey-611;
+        background: $grey-611 url(/asset/images/no-color.png) no-repeat center;
+        user-select: none;
+        padding: 0;
+      }
+    }
+
+    &.right {
+      height: auto;
+      order: 2;
+      padding-right: 0;
+      padding-left: 5px;
+    }
+  }
+
+  .ln-grid-color-label {
+		@include highlightable();
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.left {
+      order: 1;
+      padding-left: 0;
+      padding-right: 5px;
+
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import 'index';
+
+.ln-grid-checkbox {
+  // border: 1px solid fuchsia;
+  @include make-row();
+  @include justify-content(center);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+  &.hidden {
+    display: none;
+	}
+
+  &.disabled {
+    @include disabled(1, $white, $grey-604);
+	}
+
+  .ln-grid-checkbox-control {
+    cursor: pointer;
+  }
+}

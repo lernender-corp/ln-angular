@@ -1,0 +1,25 @@
+<div class="ln-grid-color"
+  [ngClass]="{
+    'no-color': !model.icon?.exists
+  }">
+  <div class="ln-grid-color-hex">
+    <span
+      class="circle"
+      [ngClass]="{
+        'no-color': !model.icon?.exists
+      }"
+      [ngStyle]="model.icon['style']"
+      (click)="model.icon?.onClick($event)"
+    ></span>
+  </div>
+  <div
+    class="ln-grid-color-label"
+    [ngClass]="model?.labelClassList"
+    [ngClass]="{
+      left: textAlign() === 'left'
+    }"
+    [hidden]="model?.label?.length === 0"
+  >
+    {{ model?.label }}
+  </div>
+</div>

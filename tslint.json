@@ -29,6 +29,7 @@
       "avoid-escape"
     ],
     "no-empty": false,
+    "no-switch-case-fall-through": false,
     "no-submodule-imports": false,
     "no-string-literal": false,
     "unified-signatures": false,
